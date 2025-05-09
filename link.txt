@@ -1,0 +1,2 @@
+https://github.com/sombra9x19/MLB - Repositorio Del Proyecto
+https://github.com/baseballhackday/data-and-resources/wiki/Resources-and-ideas#submit-and-share-your-resources-and-ideas-here-this-document-is-publicly-editable-hit-edit-on-right-top - Api MLB
