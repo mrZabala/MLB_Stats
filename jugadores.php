@@ -171,6 +171,7 @@
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">RBI</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">OBP</th>
                         <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">SLG</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Acción</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -212,6 +213,11 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap player-stats text-sm">
                             <?php echo number_format($row['promedio_de_slugging'], 3); ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <a href="#?id=<?php echo $row['id_del_jugador']; ?>" class="inline-flex items-center px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-700 transition-colors duration-300">
+                                <i class="fas fa-eye mr-1"></i> Ver más
+                            </a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
