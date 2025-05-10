@@ -70,6 +70,7 @@
         </div>
     </section>
     <!-- END Hero Section -->
+    <!-- END Hero Section -->
 
     <section id="footer-section" class="max-h-[150px] ">
         <div id="blackShadow" class="flex flex-col justify-center items-center h-full bg-black bg-opacity-25 text-left  cont1" >
