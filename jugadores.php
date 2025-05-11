@@ -246,7 +246,7 @@
                                     <?php echo htmlspecialchars($row['home_runs']); ?>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap player-stats text-sm">
-                                    <?php echo htmlspecialchars($row['carreras_impulsadas']); ?>
+                                    <?php echo htmlspecialchars($row['carreas_impulsadas']); ?>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap player-stats text-sm">
                                     <?php echo number_format($row['promedio_de_enbasase'], 3); ?>
