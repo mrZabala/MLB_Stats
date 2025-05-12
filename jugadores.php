@@ -177,7 +177,7 @@
         $resultadoData = $conn->query($sql_jugadoresData);
 
         // esta es la consulta que filtra y trae los jugadores le llega?
-        $sql = "SELECT j.*, e.nombre_del_equipo, l.nombre_de_la_liga, ej.* 
+        $sql = "SELECT j.*, e.nombre_del_equipo, l.nombre_de_la_liga,ej.* 
                     FROM jugadores j 
                     LEFT JOIN equipos e ON j.id_del_equipo = e.id_del_equipo 
                     LEFT JOIN ligas l ON j.id_de_la_liga = l.id_de_la_liga 
@@ -246,7 +246,7 @@
                                     <?php echo htmlspecialchars($row['home_runs']); ?>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap player-stats text-sm">
-                                    <?php echo htmlspecialchars($row['carreras_impulsadas']); ?>
+                                    <?php echo htmlspecialchars($row['carreas_impulsadas']); ?>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap player-stats text-sm">
                                     <?php echo number_format($row['promedio_de_enbasase'], 3); ?>

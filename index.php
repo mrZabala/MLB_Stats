@@ -141,6 +141,7 @@
 
                 // Consulta a la tabla jugadores
                 $sql = "SELECT * FROM jugadores";
+                $cant = 3;
                 $resultado = $conexion->query($sql);
                 ?>
                 <!-- HTML -->

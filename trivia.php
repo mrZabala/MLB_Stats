@@ -400,6 +400,8 @@
             let questionAnswered = false;
 
             // DOM elements
+            //#region variables - DOM elements
+
             const introCard = document.getElementById('intro-card');
             const quizCard = document.getElementById('quiz-card');
             const resultsCard = document.getElementById('results-card');
@@ -422,6 +424,7 @@
             const scoreMessage = document.getElementById('score-message');
             const reviewContainer = document.getElementById('review-container');
 
+            //#endregion
             
             startBtn.addEventListener('click', function() {
                 introCard.classList.add('hidden');

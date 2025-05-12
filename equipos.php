@@ -435,7 +435,7 @@
                                     <?= $equipo['campeonato_ganados'] ?>
                                 </td>
                                 <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
-                                    <a href="equipo-detalle.php?id=<?= $equipo['id_del_equipo'] ?>" 
+                                    <a href="equipo-detalles.php?id=<?= $equipo['id_del_equipo'] ?>" 
                                        class="text-blue-600 hover:text-blue-900">
                                         <i class="fas fa-eye mr-1"></i> Ver detalles
                                     </a>
