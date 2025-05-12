@@ -187,7 +187,7 @@
                     <li><a href="index.php" class="boton">Inicio</a></li>
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
-                    <li><a href="#" class="boton">Partidos</a></li>
+                    <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
                     <li><a href="#" class="boton">Trivia</a></li>
                 </ul>
             </div>

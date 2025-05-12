@@ -41,6 +41,42 @@ CREATE TABLE `equipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
+
+--
 -- Volcado de datos para la tabla `equipos`
 --
 
@@ -100,6 +136,42 @@ CREATE TABLE `estadisticas_equipos` (
   `Promedio_de_alcanzar_base` decimal(4,3) DEFAULT 0.000,
   `promedio_de_slugging` decimal(4,3) DEFAULT 0.000
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
 
 --
 -- Volcado de datos para la tabla `estadisticas_equipos`
@@ -166,6 +238,42 @@ CREATE TABLE `estadisticas_jugadores` (
   `rollings_y_flyout` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
+
 -- --------------------------------------------------------
 
 --
@@ -186,6 +294,42 @@ CREATE TABLE `historial_juegos` (
   `veces_al_bate` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
+
 -- --------------------------------------------------------
 
 --
@@ -202,6 +346,42 @@ CREATE TABLE `juegos` (
   `temporada` varchar(20) DEFAULT NULL,
   `descripcion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
 
 -- --------------------------------------------------------
 
@@ -228,6 +408,42 @@ CREATE TABLE `jugadores` (
   `lugar_de_nacimiento` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
+
 -- --------------------------------------------------------
 
 --
@@ -240,6 +456,42 @@ CREATE TABLE `ligas` (
   `id_equipo` int(11) DEFAULT NULL,
   `id_jugador` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
+(720001, 108, 'Angel Stadium', '2025-05-15', '19:07:00', 'Reid Detmers', '2025', 'Partido de temporada regular contra Seattle Mariners'),
+(720002, 109, 'Chase Field', '2025-05-15', '18:40:00', 'Zac Gallen', '2025', 'Partido interligas contra Kansas City Royals'),
+(720003, 110, 'Oriole Park at Camden Yards', '2025-05-16', '19:05:00', 'Corbin Burnes', '2025', 'Serie divisional contra Boston Red Sox'),
+(720004, 111, 'Fenway Park', '2025-05-16', '19:10:00', 'Brayan Bello', '2025', 'Clásico rival contra New York Yankees'),
+(720005, 112, 'Wrigley Field', '2025-05-17', '13:20:00', 'Justin Steele', '2025', 'Partido de sábado por la tarde contra St. Louis Cardinals'),
+(720006, 113, 'Great American Ball Park', '2025-05-17', '18:40:00', 'Hunter Greene', '2025', 'Enfrentamiento contra Los Angeles Dodgers'),
+(720007, 114, 'Progressive Field', '2025-05-18', '13:10:00', 'Shane Bieber', '2025', 'Juego dominical contra Minnesota Twins'),
+(720008, 115, 'Coors Field', '2025-05-18', '13:10:00', 'Kyle Freeland', '2025', 'Partido en casa contra San Francisco Giants'),
+(720009, 116, 'Comerica Park', '2025-05-19', '18:40:00', 'Tarik Skubal', '2025', 'Serie contra Toronto Blue Jays'),
+(720010, 117, 'Minute Maid Park', '2025-05-19', '19:10:00', 'Framber Valdez', '2025', 'Duelo texano contra Texas Rangers'),
+(720011, 118, 'Kauffman Stadium', '2025-05-20', '19:10:00', 'Cole Ragans', '2025', 'Partido contra Chicago White Sox'),
+(720012, 119, 'Dodger Stadium', '2025-05-20', '19:10:00', 'Yoshinobu Yamamoto', '2025', 'Serie contra Arizona Diamondbacks'),
+(720013, 120, 'Nationals Park', '2025-05-21', '19:05:00', 'Josiah Gray', '2025', 'Enfrentamiento con New York Mets'),
+(720014, 121, 'Citi Field', '2025-05-21', '19:10:00', 'Kodai Senga', '2025', 'Juego contra Philadelphia Phillies'),
+(720015, 133, 'Oakland Coliseum', '2025-05-22', '18:40:00', 'Paul Blackburn', '2025', 'Partido contra Houston Astros'),
+(720016, 134, 'PNC Park', '2025-05-22', '18:35:00', 'Mitch Keller', '2025', 'Serie contra Chicago Cubs'),
+(720017, 135, 'Petco Park', '2025-05-23', '18:40:00', 'Yu Darvish', '2025', 'Duelo californiano contra Los Angeles Dodgers'),
+(720018, 136, 'T-Mobile Park', '2025-05-23', '19:10:00', 'Luis Castillo', '2025', 'Partido contra Oakland Athletics'),
+(720019, 137, 'Oracle Park', '2025-05-24', '13:05:00', 'Logan Webb', '2025', 'Juego de día contra Colorado Rockies'),
+(720020, 138, 'Busch Stadium', '2025-05-24', '18:15:00', 'Sonny Gray', '2025', 'Rivalidad histórica contra Chicago Cubs'),
+(720021, 139, 'Tropicana Field', '2025-05-25', '13:10:00', 'Zach Eflin', '2025', 'Partido contra Kansas City Royals'),
+(720022, 140, 'Globe Life Field', '2025-05-25', '13:35:00', 'Nathan Eovaldi', '2025', 'Serie contra Houston Astros'),
+(720023, 141, 'Rogers Centre', '2025-05-26', '15:07:00', 'Kevin Gausman', '2025', 'Juego feriado contra Detroit Tigers'),
+(720024, 142, 'Target Field', '2025-05-26', '13:10:00', 'Pablo López', '2025', 'Enfrentamiento con Cleveland Guardians'),
+(720025, 143, 'Citizens Bank Park', '2025-05-27', '18:40:00', 'Zack Wheeler', '2025', 'Partido contra Atlanta Braves'),
+(720026, 144, 'Truist Park', '2025-05-27', '19:20:00', 'Spencer Strider', '2025', 'Duelo divisional contra Philadelphia Phillies'),
+(720027, 145, 'Guaranteed Rate Field', '2025-05-28', '19:10:00', 'Dylan Cease', '2025', 'Serie contra Baltimore Orioles'),
+(720028, 146, 'loanDepot park', '2025-05-28', '18:40:00', 'Jesús Luzardo', '2025', 'Partido contra Washington Nationals'),
+(720029, 147, 'Yankee Stadium', '2025-05-29', '19:05:00', 'Gerrit Cole', '2025', 'Clásico contra Boston Red Sox'),
+(720030, 158, 'American Family Field', '2025-05-29', '18:40:00', 'Freddy Peralta', '2025', 'Serie contra St. Louis Cardinals');
 
 --
 -- Volcado de datos para la tabla `ligas`
