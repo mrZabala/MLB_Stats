@@ -396,12 +396,13 @@
             
             let currentQuestion = 0;
             let score = 0;
+            // Inicializamos un array para rastrear las respuestas del usuario
             let userAnswers = Array(quizData.length).fill(null);
+            // Agregamos un array para rastrear qué preguntas han sido respondidas y contabilizadas
+            let answeredQuestions = Array(quizData.length).fill(false);
             let questionAnswered = false;
 
             // DOM elements
-            //#region variables - DOM elements
-
             const introCard = document.getElementById('intro-card');
             const quizCard = document.getElementById('quiz-card');
             const resultsCard = document.getElementById('results-card');
@@ -423,8 +424,6 @@
             const finalScore = document.getElementById('final-score');
             const scoreMessage = document.getElementById('score-message');
             const reviewContainer = document.getElementById('review-container');
-
-            //#endregion
             
             startBtn.addEventListener('click', function() {
                 introCard.classList.add('hidden');
@@ -434,7 +433,7 @@
 
            
             function displayQuestion() {
-                questionAnswered = false;
+                questionAnswered = answeredQuestions[currentQuestion];
                 questionCounter.textContent = `Pregunta ${currentQuestion + 1} de ${quizData.length}`;
                 scoreCounter.textContent = `Puntuación: ${score}`;
                 progressBarInner.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
@@ -446,7 +445,7 @@
                     const button = document.createElement('button');
                     button.className = `option-btn w-full text-left py-3 px-4 rounded-md flex items-center`;
                     
-                    
+                    // Si el usuario ya seleccionó esta opción anteriormente
                     if (userAnswers[currentQuestion] === index) {
                         button.classList.add('option-selected');
                     }
@@ -465,8 +464,15 @@
                     optionsContainer.appendChild(button);
                 });
                 
-            
+                // Si la pregunta ya fue respondida, mostramos las respuestas correctas/incorrectas
+                if (questionAnswered) {
+                    showAnswerFeedback();
+                }
+                
+                // Controlamos la visibilidad del botón "Anterior"
                 prevBtn.classList.toggle('hidden', currentQuestion === 0);
+                
+                // Cambiamos el texto del botón "Siguiente" a "Finalizar" en la última pregunta
                 if (currentQuestion === quizData.length - 1) {
                     nextBtn.textContent = 'Finalizar';
                     nextBtn.innerHTML = 'Finalizar<i class="fas fa-check ml-2"></i>';
@@ -480,13 +486,14 @@
             function selectOption(optionIndex) {
                 if (questionAnswered) return;
                 
-                
+                // Quitamos la clase 'selected' de todos los botones
                 const options = optionsContainer.querySelectorAll('.option-btn');
                 options.forEach(option => option.classList.remove('option-selected'));
-          
+                
+                // Agregamos la clase 'selected' al botón seleccionado
                 options[optionIndex].classList.add('option-selected');
                 
-             
+                // Guardamos la respuesta del usuario
                 userAnswers[currentQuestion] = optionIndex;
             }
 
@@ -495,33 +502,57 @@
                 if (userAnswers[currentQuestion] === null) return false;
                 
                 questionAnswered = true;
-                const options = optionsContainer.querySelectorAll('.option-btn');
-                const correctAnswerIndex = quizData[currentQuestion].correctAnswer;
-                const userAnswerIndex = userAnswers[currentQuestion];
+                showAnswerFeedback();
                 
-                
-                options.forEach((option, index) => {
-                    if (index === correctAnswerIndex) {
-                        option.classList.add('option-correct');
-                        option.innerHTML += '<span class="ml-auto"><i class="fas fa-check text-green-500"></i></span>';
-                    } else if (index === userAnswerIndex) {
-                        option.classList.add('option-incorrect');
-                        option.innerHTML += '<span class="ml-auto"><i class="fas fa-times text-red-500"></i></span>';
+                // Solo aumentamos la puntuación si es la primera vez que se responde esta pregunta correctamente
+                if (!answeredQuestions[currentQuestion]) {
+                    const correctAnswerIndex = quizData[currentQuestion].correctAnswer;
+                    const userAnswerIndex = userAnswers[currentQuestion];
+                    
+                    if (userAnswerIndex === correctAnswerIndex) {
+                        score++;
+                        scoreCounter.textContent = `Puntuación: ${score}`;
                     }
-                    option.disabled = true;
-                });
-                
-                
-                if (userAnswerIndex === correctAnswerIndex && !userAnswers.answered) {
-                    score++;
-                    scoreCounter.textContent = `Puntuación: ${score}`;
-                    userAnswers.answered = true;
+                    
+                    // Marcamos esta pregunta como respondida
+                    answeredQuestions[currentQuestion] = true;
                 }
                 
                 return true;
             }
+            
+            // Función para mostrar retroalimentación visual de respuesta correcta/incorrecta
+            function showAnswerFeedback() {
+                const options = optionsContainer.querySelectorAll('.option-btn');
+                const correctAnswerIndex = quizData[currentQuestion].correctAnswer;
+                const userAnswerIndex = userAnswers[currentQuestion];
+                
+                options.forEach((option, index) => {
+                    if (index === correctAnswerIndex) {
+                        option.classList.add('option-correct');
+                        
+                        // Añadimos el ícono de check solo si no existe ya
+                        if (!option.querySelector('.fa-check')) {
+                            const checkIcon = document.createElement('span');
+                            checkIcon.className = 'ml-auto';
+                            checkIcon.innerHTML = '<i class="fas fa-check text-green-500"></i>';
+                            option.appendChild(checkIcon);
+                        }
+                    } else if (index === userAnswerIndex) {
+                        option.classList.add('option-incorrect');
+                        
+                        // Añadimos el ícono de X solo si no existe ya
+                        if (!option.querySelector('.fa-times')) {
+                            const timesIcon = document.createElement('span');
+                            timesIcon.className = 'ml-auto';
+                            timesIcon.innerHTML = '<i class="fas fa-times text-red-500"></i>';
+                            option.appendChild(timesIcon);
+                        }
+                    }
+                });
+            }
 
-            // siguiente pregunta
+            // Manejador para el botón "Siguiente"
             nextBtn.addEventListener('click', function() {
                 if (currentQuestion < quizData.length - 1) {
                     if (userAnswers[currentQuestion] !== null) {
@@ -545,7 +576,7 @@
                 }
             });
 
-            // ver respuesta anterrior
+            // Manejador para el botón "Anterior"
             prevBtn.addEventListener('click', function() {
                 if (currentQuestion > 0) {
                     currentQuestion--;
@@ -553,14 +584,14 @@
                 }
             });
 
-            // mostrar resultado
+            // Función para mostrar los resultados finales
             function showResults() {
                 quizCard.classList.add('hidden');
                 resultsCard.classList.remove('hidden');
                 
                 finalScore.innerHTML = `Tu puntuación: <span class="font-bold">${score}</span> de ${quizData.length}`;
                 
-                // aqui hay un error se arregla despues
+                // Mensaje personalizado según la puntuación
                 if (score === quizData.length) {
                     scoreMessage.textContent = '¡Perfecto! Eres un verdadero experto en béisbol.';
                     createConfetti();
@@ -573,7 +604,7 @@
                 }
             }
 
-            // estos se supone que es una animacion de confeti pero no funciona por ahora
+            // Función para crear el efecto de confeti
             function createConfetti() {
                 const colors = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
                 
@@ -585,14 +616,14 @@
                     confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                     document.body.appendChild(confetti);
                     
-                    
+                    // Eliminamos el confeti después de 5 segundos
                     setTimeout(() => {
                         confetti.remove();
                     }, 5000);
                 }
             }
 
-            // esto te muestra las repuestas una vez terminada la trivia
+            // Manejador para el botón "Ver respuestas"
             showAnswersBtn.addEventListener('click', function() {
                 resultsCard.classList.add('hidden');
                 reviewCard.classList.remove('hidden');
@@ -633,17 +664,18 @@
                 });
             });
 
-            // volver a ver los resultados
+            // Manejador para el botón "Volver a resultados"
             backToResultsBtn.addEventListener('click', function() {
                 reviewCard.classList.add('hidden');
                 resultsCard.classList.remove('hidden');
             });
 
-            // estos reinicia la trivia
+            // Manejador para el botón "Volver a jugar"
             restartBtn.addEventListener('click', function() {
                 currentQuestion = 0;
                 score = 0;
                 userAnswers = Array(quizData.length).fill(null);
+                answeredQuestions = Array(quizData.length).fill(false);
                 
                 resultsCard.classList.add('hidden');
                 quizCard.classList.remove('hidden');
