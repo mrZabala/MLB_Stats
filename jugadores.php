@@ -125,7 +125,7 @@
             <ul class="flex gap-6">
                 <li><a href="index.php" class="boton">Inicio</a></li>
                 <li><a href="jugadores.php" class="boton">Jugadores</a></li>
-                <li><a href="#" class="boton">Equipos</a></li>
+                <li><a href="equipos.php" class="boton">Equipos</a></li>
                 <li><a href="#" class="boton">Partidos</a></li>
                 <li><a href="#" class="boton">Trivia</a></li>
             </ul>

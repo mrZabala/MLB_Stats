@@ -77,7 +77,7 @@
                 <ul class="flex gap-6 hidden lg:flex">
                     <li><a href="index.php" class="boton">Inicio</a></li>
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
-                    <li><a href="#" class="boton">Equipos</a></li>
+                    <li><a href="equipos.php" class="boton">Equipos</a></li>
                     <li><a href="#" class="boton">Partidos</a></li>
                     <li><a href="#" class="boton">Trivia</a></li>
                 </ul>
@@ -152,7 +152,7 @@
                             <div class="p-4">
                                 <h3 class="text-xl font-semibold mb-1"><?= $jugador['nombre_del_jugador'] ?></h3>
                                 <p class="text-gray-600 mb-2"><?= $jugador['posicion_del_jugador'] ?></p>
-                                <p class="text-gray-500 text-sm mb-2">Nacionalidad: <?= $jugador['nacionalidad'] ?></p>
+                                <p class="text-gray-500 text-sm mb-2">País de Origen: <?= $jugador['lugar_de_nacimiento'] ?></p>
                                 <a href="jugador-detalle.php?id=<?= $jugador['id_del_jugador'] ?>"
                                     class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                                     Ver más

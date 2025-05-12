@@ -252,74 +252,132 @@
 
   
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-            <?php
-            if ($result && $result->num_rows > 0) {
-                while ($equipo = $result->fetch_assoc()) {
-              
-                    $liga_class = ($equipo['id_de_la_liga'] == 1) ? 'american-league' : 'national-league';
-                    $liga_nombre = $equipo['nombre_de_la_liga'] ?? 'Liga no especificada';
-                   
-                    $total_juegos = $equipo['juegos_ganados'] + $equipo['juegos_perdidos'];
-                    $porcentaje_victorias = ($total_juegos > 0) ? round(($equipo['juegos_ganados'] / $total_juegos), 3) : 0;
-                    
-                    
-                    $trofeos = '';
-                    $num_campeonatos = $equipo['campeonato_ganados'];
-                    for ($i = 0; $i < min($num_campeonatos, 5); $i++) {
-                        $trofeos .= '<i class="fas fa-trophy trophy-icon"></i>';
-                    }
-                    if ($num_campeonatos > 5) {
-                        $trofeos .= ' +' . ($num_campeonatos - 5);
-                    }
-            ?>
-                    <div class="team-card overflow-hidden">
-                        <div class="p-6 flex flex-col items-center">
-                           
-                            <div class="bg-gray-100 rounded-full p-4 mb-4">
-                                <img src="?= strtolower($equipo['abreviacion_del_equipo']) ?>" 
-                                     alt="aqui hay bobo lo arreglo despues" 
-                                     class="team-logo">
+            <!-- Static Team Card Example 1: New York Yankees -->
+            <div class="team-card overflow-hidden">
+                <div class="p-6 flex flex-col items-center">
+                    <div class="bg-gray-100 rounded-full p-4 mb-4">
+                        <img src="assets/img/logos/yankees.svg" 
+                             alt="New York Yankees" 
+                             class="team-logo">
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold mb-1">New York Yankees</h3>
+                        <p class="text-gray-600 mb-2">New York</p>
+                        <span class="league-badge american-league">American League</span>
+                    </div>
+                    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Récord</p>
+                            <p class="win-loss-record">99-63 (.611)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Campeonatos</p>
+                            <div class="championships justify-center">
+                                <i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i> +22
                             </div>
-                            
-                          
-                            
-                            <div class="text-center mb-4">
-                                <h3 class="text-xl font-bold mb-1"><?= htmlspecialchars($equipo['nombre_del_equipo']) ?></h3>
-                                <p class="text-gray-600 mb-2"><?= htmlspecialchars($equipo['ciudad_del_equipo'] ?? $equipo['ubicacion_de_origen_del_equipo']) ?></p>
-                                <span class="league-badge <?= $liga_class ?>"><?= htmlspecialchars($liga_nombre) ?></span>
-                            </div>
-                            
-                            
-                            <div class="w-full grid grid-cols-2 gap-2 mb-4">
-                                <div class="text-center">
-                                    <p class="text-sm text-gray-500">Récord</p>
-                                    <p class="win-loss-record"><?= $equipo['juegos_ganados'] ?>-<?= $equipo['juegos_perdidos'] ?> (.<?= str_pad(substr(number_format($porcentaje_victorias, 3), 2, 3), 3, '0', STR_PAD_LEFT) ?>)</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-sm text-gray-500">Campeonatos</p>
-                                    <div class="championships justify-center">
-                                        <?= $trofeos ?>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                            <a href="equipo-detalle.php?id=<?= $equipo['id_del_equipo'] ?>" 
-                               class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-eye mr-2"></i>Ver detalles
-                            </a>
                         </div>
                     </div>
-            <?php
-                }
-            } else {
-            ?>
-                <div class="col-span-full no-results text-center">
-                    <p>No se encontraron equipos<?= isset($_GET['search']) ? ' con el nombre "' . htmlspecialchars($_GET['search']) . '"' : '' ?>.</p>
+                    <a href="equipo-detalle.php?id=1" 
+                       class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver detalles
+                    </a>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
+
+       
+            <div class="team-card overflow-hidden">
+                <div class="p-6 flex flex-col items-center">
+                    <div class="bg-gray-100 rounded-full p-4 mb-4">
+                        <img src="assets/img/logos/chicago.svg" 
+                             alt="Los Angeles Dodgers" 
+                             class="team-logo">
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold mb-1">Chicago Cubs</h3>
+                        <p class="text-gray-600 mb-2">Chicago</p>
+                        <span class="league-badge national-league">National League</span>
+                    </div>
+                    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Récord</p>
+                            <p class="win-loss-record">100-62 (.617)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Campeonatos</p>
+                            <div class="championships justify-center">
+                                <i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i> +8
+                            </div>
+                        </div>
+                    </div>
+                    <a href="equipo-detalle.php?id=2" 
+                       class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver detalles
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-card overflow-hidden">
+                <div class="p-6 flex flex-col items-center">
+                    <div class="bg-gray-100 rounded-full p-4 mb-4">
+                        <img src="assets/img/logos/angeles.svg" 
+                             alt="Los Angeles Dodgers" 
+                             class="team-logo">
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold mb-1">Los Angeles Dodgers</h3>
+                        <p class="text-gray-600 mb-2">Los Angeles</p>
+                        <span class="league-badge national-league">National League</span>
+                    </div>
+                    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Récord</p>
+                            <p class="win-loss-record">100-62 (.617)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Campeonatos</p>
+                            <div class="championships justify-center">
+                                <i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i> +2
+                            </div>
+                        </div>
+                    </div>
+                    <a href="equipo-detalle.php?id=2" 
+                       class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Static Team Card Example 3: Boston Red Sox -->
+            <div class="team-card overflow-hidden">
+                <div class="p-6 flex flex-col items-center">
+                    <div class="bg-gray-100 rounded-full p-4 mb-4">
+                        <img src="assets/img/logos/boston.svg" 
+                             alt="Boston Red Sox" 
+                             class="team-logo">
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold mb-1">Boston Red Sox</h3>
+                        <p class="text-gray-600 mb-2">Boston</p>
+                        <span class="league-badge american-league">American League</span>
+                    </div>
+                    <div class="w-full grid grid-cols-2 gap-2 mb-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Récord</p>
+                            <p class="win-loss-record">78-84 (.481)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Campeonatos</p>
+                            <div class="championships justify-center">
+                                <i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i><i class="fas fa-trophy trophy-icon"></i> +4
+                            </div>
+                        </div>
+                    </div>
+                    <a href="equipo-detalle.php?id=3" 
+                       class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        <i class="fas fa-eye mr-2"></i>Ver detalles
+                    </a>
+                </div>
+            </div>
         </div>
 
      
@@ -351,11 +409,7 @@
                             <tr>
                                 <td class="px-4 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 mr-3">
-                                            <img class="h-10 w-10 rounded-full" 
-                                                 src="assets/img/logos/<?= strtolower($equipo['abreviacion_del_equipo']) ?>.svg" 
-                                                 alt="<?= htmlspecialchars($equipo['nombre_del_equipo']) ?>">
-                                        </div>
+                                    
                                         <div>
                                             <div class="text-sm font-medium text-gray-900">
                                                 <?= htmlspecialchars($equipo['nombre_del_equipo']) ?>
