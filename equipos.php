@@ -197,8 +197,6 @@
 
     <main class="container mx-auto px-4 py-8">
         <h2 class="text-3xl font-bold mb-6 text-center text-gray-800 section-title">Equipos de la MLB</h2>
-
-
         <div class="search-container p-4 mb-6">
             <form method="GET" action="" class="flex flex-col md:flex-row gap-4 items-end">
                 <div class="flex-grow">
@@ -249,8 +247,7 @@
 
         $result = $conn->query($sql);
         ?>
-
-  
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
             <!-- Static Team Card Example 1: New York Yankees -->
             <div class="team-card overflow-hidden">
