@@ -1,4 +1,4 @@
-# MLB Stats
+# MLB Stats ⚾
 
 ## Descripción del Proyecto
 
