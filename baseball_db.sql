@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2025 a las 04:04:05
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2025 at 07:58 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `baseball_db`
+-- Database: `baseball_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `equipos`
+-- Table structure for table `equipos`
 --
 
 CREATE TABLE `equipos` (
@@ -41,7 +41,7 @@ CREATE TABLE `equipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `equipos`
+-- Dumping data for table `equipos`
 --
 
 INSERT INTO `equipos` (`id_del_equipo`, `nombre_del_equipo`, `abreviacion_del_equipo`, `id_de_la_liga`, `ubicacion_de_origen_del_equipo`, `fecha_del_primer_juego_del_equipo`, `juegos_ganados`, `juegos_perdidos`, `campeonato_ganados`, `ciudad_del_equipo`) VALUES
@@ -79,7 +79,7 @@ INSERT INTO `equipos` (`id_del_equipo`, `nombre_del_equipo`, `abreviacion_del_eq
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estadisticas_equipos`
+-- Table structure for table `estadisticas_equipos`
 --
 
 CREATE TABLE `estadisticas_equipos` (
@@ -102,7 +102,7 @@ CREATE TABLE `estadisticas_equipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `estadisticas_equipos`
+-- Dumping data for table `estadisticas_equipos`
 --
 
 INSERT INTO `estadisticas_equipos` (`id_del_equipo`, `juegos_jugados`, `turnos_al_bate`, `carreras`, `hits`, `dobles`, `triples`, `home_runs`, `carreras_impulsadas`, `bases_por_bola`, `ponches`, `bases_robadas`, `atrapado_robando`, `promedios_al_bate`, `Promedio_de_alcanzar_base`, `promedio_de_slugging`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `estadisticas_equipos` (`id_del_equipo`, `juegos_jugados`, `turnos_a
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estadisticas_jugadores`
+-- Table structure for table `estadisticas_jugadores`
 --
 
 CREATE TABLE `estadisticas_jugadores` (
@@ -167,7 +167,7 @@ CREATE TABLE `estadisticas_jugadores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `estadisticas_jugadores`
+-- Dumping data for table `estadisticas_jugadores`
 --
 
 INSERT INTO `estadisticas_jugadores` (`id_estadistica`, `id_del_jugador`, `juegos_jugados`, `turnos_al_bate`, `carreras`, `hits`, `total_de_bases`, `dobles`, `triples`, `home_runs`, `carreas_impulsadas`, `bases_por_bola`, `pase_internacional`, `ponches`, `bases_robadas`, `atrapado_robando_base`, `promedio_de_bateo`, `promedio_de_enbasase`, `promedio_de_slugging`, `rollings_y_flyout`) VALUES
@@ -223,7 +223,7 @@ INSERT INTO `estadisticas_jugadores` (`id_estadistica`, `id_del_jugador`, `juego
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `historial_juegos`
+-- Table structure for table `historial_juegos`
 --
 
 CREATE TABLE `historial_juegos` (
@@ -243,7 +243,7 @@ CREATE TABLE `historial_juegos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juegos`
+-- Table structure for table `juegos`
 --
 
 CREATE TABLE `juegos` (
@@ -258,7 +258,7 @@ CREATE TABLE `juegos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `juegos`
+-- Dumping data for table `juegos`
 --
 
 INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`, `fecha_del_juego`, `hora_inicio`, `pitcher_abridor`, `temporada`, `descripcion`) VALUES
@@ -296,7 +296,7 @@ INSERT INTO `juegos` (`id_del_juego`, `id_del_equipo`, `estadio_donde_se_jugara`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `jugadores`
+-- Table structure for table `jugadores`
 --
 
 CREATE TABLE `jugadores` (
@@ -315,115 +315,115 @@ CREATE TABLE `jugadores` (
   `mano_dominante_del_jugador` enum('Derecho','Izquierdo','Ambidiestro') DEFAULT NULL,
   `apodo_del_jugador` varchar(100) DEFAULT NULL,
   `año_draft` year(4) DEFAULT NULL,
-  `lugar_de_nacimiento` int(11) DEFAULT 0
+  `lugar_de_nacimiento` varchar(255) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `jugadores`
+-- Dumping data for table `jugadores`
 --
 
 INSERT INTO `jugadores` (`id_del_jugador`, `nombre_del_jugador`, `edad_del_jugador`, `numero_del_jugador`, `id_del_equipo`, `id_de_la_liga`, `debut_del_jugador`, `genero_del_jugador`, `estatura_de_jugador`, `peso_del_jugador`, `fecha_nacimiento`, `posicion_del_jugador`, `mano_dominante_del_jugador`, `apodo_del_jugador`, `año_draft`, `lugar_de_nacimiento`) VALUES
-(833853, 'Aaron Judge', 32, 99, 147, 1, '2016-08-13', 'M', 201.00, 128.00, '1992-04-26', 'OF', 'Derecho', 'The Judge', '2013', 1),
-(833854, 'Shohei Ohtani', 30, 17, 119, 1, '2018-03-29', 'M', 193.00, 95.00, '1994-07-05', 'P/DH', 'Izquierdo', 'Showtime', '2018', 2),
-(833855, 'Juan Soto', 26, 22, 120, 1, '2018-05-20', 'M', 188.00, 102.00, '1998-10-25', 'OF', 'Izquierdo', 'Childish Bambino', '2015', 3),
-(833856, 'Fernando Tatís Jr.', 25, 23, 135, 1, '2019-03-28', 'M', 191.00, 95.00, '1999-01-02', 'SS/OF', 'Derecho', 'El Niño', '2016', 3),
-(833857, 'Mookie Betts', 32, 50, 119, 1, '2014-06-29', 'M', 175.00, 82.00, '1992-10-07', 'OF/2B', 'Derecho', 'Cookie', '2011', 1),
-(833858, 'Vladimir Guerrero Jr.', 26, 27, 141, 1, '2019-04-26', 'M', 188.00, 111.00, '1999-03-16', '1B', 'Derecho', 'Vladito', '2015', 3),
-(833859, 'Ronald Acuña Jr.', 26, 13, 144, 1, '2018-04-25', 'M', 183.00, 93.00, '1997-12-18', 'OF', 'Derecho', 'El Abusador', '2015', 4),
-(833860, 'Mike Trout', 33, 27, 108, 1, '2011-07-08', 'M', 188.00, 106.00, '1991-08-07', 'OF', 'Derecho', 'The Millville Meteor', '2009', 1),
-(833861, 'Freddie Freeman', 34, 5, 119, 1, '2010-09-01', 'M', 196.00, 102.00, '1989-09-12', '1B', 'Izquierdo', 'Free', '2007', 1),
-(833862, 'José Ramírez', 31, 11, 114, 1, '2013-09-01', 'M', 175.00, 86.00, '1992-09-17', '3B', 'Ambidiestro', 'Enriquito', '2009', 3),
-(833863, 'Bobby Witt Jr.', 24, 7, 118, 1, '2022-04-07', 'M', 183.00, 90.00, '2000-06-14', 'SS', 'Derecho', 'B-Dub', '2019', 1),
-(833864, 'Julio Rodríguez', 23, 44, 136, 1, '2022-04-08', 'M', 191.00, 97.00, '2000-12-29', 'OF', 'Derecho', 'J-Rod', '2017', 3),
-(833865, 'Bryce Harper', 31, 3, 143, 1, '2012-04-28', 'M', 191.00, 98.00, '1992-10-16', '1B/OF', 'Izquierdo', 'Bam Bam', '2010', 1),
-(833866, 'Francisco Lindor', 30, 12, 121, 1, '2015-06-14', 'M', 178.00, 86.00, '1993-11-14', 'SS', 'Ambidiestro', 'Mr. Smile', '2011', 3),
-(833867, 'Luis Robert Jr.', 26, 88, 145, 1, '2020-07-24', 'M', 190.00, 98.00, '1997-08-03', 'OF', 'Derecho', 'La Pantera', '2017', 3),
-(833868, 'Yordan Álvarez', 27, 44, 117, 1, '2019-06-09', 'M', 196.00, 102.00, '1997-06-27', 'OF/DH', 'Izquierdo', 'Air Yordan', '2016', 3),
-(833869, 'Gerrit Cole', 33, 45, 147, 1, '2013-06-11', 'M', 193.00, 99.00, '1990-09-08', 'P', 'Derecho', 'Cole Train', '2011', 1),
-(833870, 'Corbin Burnes', 29, 39, 110, 1, '2018-07-10', 'M', 191.00, 93.00, '1994-10-22', 'P', 'Derecho', 'Burnesy', '2016', 1),
-(833871, 'Zack Wheeler', 34, 45, 143, 1, '2013-06-18', 'M', 193.00, 97.00, '1990-05-30', 'P', 'Derecho', 'Wheels', '2009', 1),
-(833872, 'Kyle Tucker', 27, 30, 117, 1, '2018-07-07', 'M', 193.00, 88.00, '1997-01-17', 'OF', 'Izquierdo', 'King Tuck', '2015', 1),
-(833873, 'Adley Rutschman', 26, 35, 110, 1, '2022-05-21', 'M', 188.00, 100.00, '1998-02-06', 'C', 'Ambidiestro', 'Clutchman', '2019', 1),
-(833874, 'Gunnar Henderson', 22, 2, 110, 1, '2022-08-31', 'M', 191.00, 96.00, '2001-06-29', 'SS/3B', 'Izquierdo', 'G-Money', '2019', 1),
-(833875, 'Zac Gallen', 28, 23, 109, 1, '2019-06-20', 'M', 188.00, 86.00, '1995-08-03', 'P', 'Derecho', 'Milk Man', '2016', 1),
-(833876, 'Marcus Semien', 34, 2, 140, 1, '2013-09-04', 'M', 183.00, 88.00, '1990-09-17', '2B', 'Derecho', 'Semi', '2011', 1),
-(833877, 'Corey Seager', 30, 5, 140, 1, '2015-09-03', 'M', 193.00, 97.00, '1994-04-27', 'SS', 'Izquierdo', 'Seags', '2012', 1),
-(833878, 'Pete Alonso', 29, 20, 121, 1, '2019-03-28', 'M', 191.00, 111.00, '1994-12-07', '1B', 'Derecho', 'Polar Bear', '2016', 1),
-(833879, 'Ozzie Albies', 27, 1, 144, 1, '2017-08-01', 'M', 173.00, 75.00, '1997-01-07', '2B', 'Ambidiestro', 'Wizard of Oz', '2013', 5),
-(833880, 'José Altuve', 34, 27, 117, 1, '2011-07-20', 'M', 168.00, 73.00, '1990-05-06', '2B', 'Derecho', 'Little Giant', '2006', 4),
-(833881, 'Matt Olson', 30, 28, 144, 1, '2016-09-12', 'M', 196.00, 102.00, '1994-03-29', '1B', 'Izquierdo', 'Oly', '2012', 1),
-(833882, 'Austin Riley', 27, 27, 144, 1, '2019-05-15', 'M', 191.00, 108.00, '1997-04-02', '3B', 'Derecho', 'Young Thicc', '2015', 1),
-(833883, 'Spencer Strider', 25, 99, 144, 1, '2021-10-01', 'M', 188.00, 88.00, '1998-10-28', 'P', 'Derecho', 'Strider Man', '2020', 1),
-(833884, 'Elly De La Cruz', 22, 44, 113, 1, '2023-06-06', 'M', 196.00, 91.00, '2002-01-11', 'SS/3B', 'Ambidiestro', 'La Tsunami', '2018', 3),
-(833885, 'Oneil Cruz', 25, 15, 134, 1, '2021-10-02', 'M', 201.00, 99.00, '1998-10-04', 'SS', 'Izquierdo', 'El Jefe', '2017', 3),
-(833886, 'Bryan Reynolds', 29, 10, 134, 1, '2019-04-20', 'M', 191.00, 93.00, '1995-01-27', 'OF', 'Ambidiestro', 'Bry', '2016', 1),
-(833887, 'Dylan Cease', 28, 84, 145, 1, '2019-07-03', 'M', 188.00, 97.00, '1995-12-28', 'P', 'Derecho', 'Cease and Desist', '2014', 1),
-(833888, 'Jazz Chisholm Jr.', 26, 2, 146, 1, '2020-09-01', 'M', 183.00, 84.00, '1998-02-01', 'OF', 'Izquierdo', 'Jazz', '2015', 5),
-(833889, 'CJ Abrams', 23, 5, 120, 1, '2022-04-08', 'M', 188.00, 86.00, '2000-10-03', 'SS', 'Izquierdo', 'CJ', '2019', 1),
-(833890, 'Trea Turner', 30, 7, 143, 1, '2015-08-21', 'M', 185.00, 84.00, '1993-06-30', 'SS', 'Derecho', 'Trea Bae', '2014', 1),
-(833891, 'Justin Verlander', 41, 35, 117, 1, '2005-07-04', 'M', 196.00, 102.00, '1983-02-20', 'P', 'Derecho', 'JV', '2004', 1),
-(833892, 'Xander Bogaerts', 31, 2, 135, 1, '2013-08-20', 'M', 185.00, 95.00, '1992-10-01', 'SS', 'Derecho', 'X-Man', '2009', 5),
-(833893, 'Ketel Marte', 30, 4, 109, 1, '2015-07-31', 'M', 188.00, 95.00, '1993-10-12', '2B', 'Ambidiestro', 'El Nino', '2010', 3),
-(833894, 'Bo Bichette', 26, 11, 141, 1, '2019-07-29', 'M', 183.00, 86.00, '1998-03-05', 'SS', 'Derecho', 'Bo Flow', '2016', 1),
-(833895, 'Wander Franco', 23, 5, 139, 1, '2021-06-22', 'M', 178.00, 86.00, '2001-03-01', 'SS', 'Ambidiestro', 'El Patron', '2017', 3),
-(833896, 'Randy Arozarena', 29, 56, 139, 1, '2019-08-14', 'M', 180.00, 84.00, '1995-02-28', 'OF', 'Derecho', 'The Cuban Missile', '2016', 3),
-(833897, 'Steven Kwan', 26, 38, 114, 1, '2022-04-08', 'M', 175.00, 77.00, '1997-09-05', 'OF', 'Izquierdo', 'Special K', '2018', 1),
-(833898, 'Emmanuel Clase', 26, 48, 114, 1, '2019-08-04', 'M', 188.00, 97.00, '1998-03-18', 'P', 'Derecho', 'Hot Cheese', '2015', 3),
-(833899, 'Hunter Greene', 24, 21, 113, 1, '2022-04-10', 'M', 198.00, 97.00, '1999-08-06', 'P', 'Derecho', 'The Real HG', '2017', 1),
-(833900, 'Alejandro Kirk', 25, 30, 141, 1, '2020-09-01', 'M', 173.00, 111.00, '1998-11-06', 'C', 'Derecho', 'Captain Kirk', '2016', 2),
-(833901, 'Paul Goldschmidt', 36, 46, 138, 1, '2011-08-01', 'M', 191.00, 100.00, '1987-09-10', '1B', 'Derecho', 'Goldy', '2009', 1),
-(833902, 'Nolan Arenado', 33, 28, 138, 1, '2013-04-28', 'M', 188.00, 97.00, '1991-04-16', '3B', 'Derecho', 'Nado', '2009', 1),
-(833903, 'Roki Sasaki', 22, 17, 108, 2, '2020-10-31', 'M', 190.00, 88.00, '2001-11-03', 'P', 'Derecho', 'The Monster', '2019', 2),
-(833904, 'Munetaka Murakami', 24, 55, 109, 2, '2018-09-05', 'M', 188.00, 100.00, '2000-02-02', '3B', 'Derecho', 'Muna', '2017', 2),
-(833905, 'Yoshinobu Yamamoto', 25, 18, 119, 1, '2017-10-02', 'M', 178.00, 79.00, '1998-08-17', 'P', 'Derecho', 'Yoshi', '2016', 2),
-(833906, 'Freddy Asiel Álvarez', 34, 51, 110, 2, '2011-12-08', 'M', 185.00, 88.00, '1990-04-25', 'P', 'Derecho', 'El Gigante', '2008', 3),
-(833907, 'Alfredo Despaigne', 38, 54, 111, 2, '2009-02-20', 'M', 175.00, 93.00, '1986-06-17', 'OF/DH', 'Derecho', 'El Caballo', '2003', 3),
-(833908, 'Yulieski Gurriel', 39, 10, 110, 2, '2005-03-15', 'M', 183.00, 86.00, '1984-06-09', '1B', 'Derecho', 'La Piña', '2001', 3),
-(833909, 'Seiya Suzuki', 29, 27, 112, 1, '2013-09-30', 'M', 182.00, 95.00, '1994-08-18', 'OF', 'Derecho', 'The Phenom', '2012', 2),
-(833910, 'Jung-hoo Lee', 25, 51, 113, 1, '2017-03-31', 'M', 183.00, 88.00, '1998-08-29', 'OF', 'Izquierdo', 'Grandson of Wind', '2016', 6),
-(833911, 'Hyun-jin Ryu', 37, 99, 141, 1, '2013-04-02', 'M', 190.00, 115.00, '1987-03-25', 'P', 'Izquierdo', 'Korean Monster', '2006', 6),
-(833912, 'Ha-seong Kim', 28, 7, 135, 1, '2021-04-01', 'M', 178.00, 82.00, '1995-10-17', 'IF', 'Derecho', 'The Fielding Wizard', '2014', 6),
-(833913, 'Masataka Yoshida', 30, 7, 111, 1, '2023-04-01', 'M', 175.00, 86.00, '1993-07-15', 'OF', 'Izquierdo', 'Big Boss', '2016', 2),
-(833914, 'Kodai Senga', 31, 34, 121, 1, '2023-04-02', 'M', 183.00, 86.00, '1993-01-30', 'P', 'Derecho', 'Ghost Fork', '2010', 2),
-(833915, 'José Adolis García', 31, 53, 140, 1, '2018-08-06', 'M', 188.00, 93.00, '1993-03-02', 'OF', 'Derecho', 'El Bombi', '2016', 3),
-(833916, 'Miguel Cabrera (Retirado)', 41, 24, 116, 2, '2003-06-20', 'M', 193.00, 113.00, '1983-04-18', '1B/DH', 'Derecho', 'Miggy', '1999', 4),
-(833917, 'Julio Teherán', 33, 27, 144, 2, '2011-05-07', 'M', 188.00, 88.00, '1991-01-27', 'P', 'Derecho', 'JT', '2007', 7),
-(833918, 'Joey Meneses', 32, 45, 120, 1, '2022-08-02', 'M', 190.00, 97.00, '1992-05-07', '1B/OF', 'Derecho', 'El Joey', '2011', 2),
-(833919, 'Jackson Holliday', 20, 1, 110, 3, '2023-09-10', 'M', 183.00, 84.00, '2003-12-04', 'SS', 'Izquierdo', 'J-Ho', '2022', 1),
-(833920, 'Paul Skenes', 22, 32, 134, 3, '2023-08-08', 'M', 198.00, 107.00, '2002-05-29', 'P', 'Derecho', 'Big Game', '2023', 1),
-(833921, 'Jasson Domínguez', 21, 98, 147, 3, '2023-09-01', 'M', 178.00, 88.00, '2003-02-07', 'OF', 'Ambidiestro', 'The Martian', '2019', 3),
-(833922, 'Wyatt Langford', 22, 24, 140, 3, '2023-09-12', 'M', 183.00, 93.00, '2001-10-27', 'OF', 'Derecho', 'Lang', '2023', 1),
-(833923, 'James Wood', 21, 15, 120, 3, '2024-05-02', 'M', 201.00, 107.00, '2002-09-17', 'OF', 'Izquierdo', 'Woody', '2021', 1),
-(833924, 'Junior Caminero', 20, 1, 139, 3, '2023-09-22', 'M', 183.00, 93.00, '2003-07-13', '3B', 'Derecho', 'El Junior', '2019', 3),
-(833925, 'Brooks Lee', 23, 11, 142, 3, '2023-09-01', 'M', 183.00, 91.00, '2001-02-14', 'SS', 'Ambidiestro', 'Brooksie', '2022', 1),
-(833926, 'Dylan Crews', 22, 15, 120, 3, '2024-04-01', 'M', 188.00, 93.00, '2002-02-01', 'OF', 'Derecho', 'Crewser', '2023', 1),
-(833927, 'Jackson Chourio', 20, 11, 158, 3, '2023-08-28', 'M', 183.00, 84.00, '2004-03-11', 'OF', 'Derecho', 'Chou', '2021', 4),
-(833928, 'Marcelo Mayer', 21, 10, 111, 3, '2023-08-01', 'M', 191.00, 86.00, '2002-12-12', 'SS', 'Izquierdo', 'Mayo', '2021', 1),
-(833929, 'Alexia Lacatena', 22, 11, 108, 4, '2022-06-15', 'F', 175.00, 70.00, '2002-08-31', 'P', 'Derecho', 'Lex', '2020', 8),
-(833930, 'Kelsie Whitmore', 25, 3, 109, 4, '2016-07-01', 'F', 170.00, 66.00, '1998-07-04', 'P/OF', 'Derecho', 'Kels', '2016', 1),
-(833931, 'Tamara Holmes', 34, 24, 108, 4, '2010-05-12', 'F', 168.00, 63.00, '1990-11-09', 'OF', 'Derecho', 'T-Bone', '2008', 1),
-(833932, 'Jade Gortarez', 26, 7, 109, 4, '2018-06-01', 'F', 165.00, 61.00, '1997-11-02', 'SS', 'Derecho', 'J.G.', '2016', 1),
-(833933, 'Ashton Lansdell', 23, 5, 108, 4, '2020-05-25', 'F', 172.00, 68.00, '2001-03-17', '2B/P', 'Derecho', 'Ash', '2019', 1),
-(833934, 'Luisa Gauci', 24, 14, 109, 4, '2019-04-10', 'F', 167.00, 64.00, '2000-09-10', 'C', 'Derecho', 'Lou', '2018', 9),
-(833935, 'Amanda Asay', 32, 19, 110, 4, '2012-06-08', 'F', 173.00, 72.00, '1992-09-28', '1B/P', 'Derecho', 'Double A', '2010', 10),
-(833936, 'Marika Lyszczyk', 23, 8, 110, 4, '2020-03-01', 'F', 168.00, 62.00, '2001-04-17', 'C', 'Derecho', 'Mari', '2019', 10),
-(833937, 'Kylee Lahners', 30, 17, 108, 4, '2015-06-10', 'F', 170.00, 67.00, '1994-07-22', '3B', 'Derecho', 'Ky', '2014', 1),
-(833938, 'Stacy Piagno', 33, 43, 109, 4, '2013-04-27', 'F', 175.00, 71.00, '1991-01-15', 'P', 'Derecho', 'Stace', '2012', 1),
-(833939, 'Chase Burns', 21, 33, 111, 5, '2023-02-17', 'M', 193.00, 95.00, '2003-07-04', 'P', 'Derecho', 'Burner', NULL, 1),
-(833940, 'Travis Bazzana', 21, 8, 112, 5, '2022-02-18', 'M', 183.00, 86.00, '2002-12-31', '2B', 'Izquierdo', 'Bazz', NULL, 9),
-(833941, 'Jac Caglianone', 21, 14, 113, 5, '2022-02-18', 'M', 196.00, 102.00, '2003-03-01', '1B/P', 'Izquierdo', 'Cags', NULL, 1),
-(833942, 'Charlie Condon', 21, 40, 114, 5, '2022-02-18', 'M', 196.00, 100.00, '2003-05-15', '1B/OF', 'Derecho', 'Chuck', NULL, 1),
-(833943, 'Carson Benge', 20, 15, 115, 5, '2022-02-18', 'M', 188.00, 91.00, '2003-05-02', 'OF/P', 'Izquierdo', 'C.B.', NULL, 1),
-(833944, 'Braden Montgomery', 21, 5, 116, 5, '2022-02-18', 'M', 188.00, 93.00, '2003-01-10', 'OF', 'Ambidiestro', 'Monty', NULL, 1),
-(833945, 'Vance Honeycutt', 21, 5, 117, 5, '2022-02-18', 'M', 191.00, 88.00, '2003-04-20', 'OF', 'Derecho', 'Honey', NULL, 1),
-(833946, 'Seaver King', 21, 7, 118, 5, '2023-02-17', 'M', 183.00, 84.00, '2003-07-10', '3B', 'Derecho', 'King S', NULL, 1),
-(833947, 'Nick Kurtz', 21, 12, 119, 5, '2022-02-18', 'M', 193.00, 100.00, '2003-10-17', '1B', 'Izquierdo', 'Kurtzy', NULL, 1),
-(833948, 'Kaelen Culpepper', 21, 6, 120, 5, '2022-02-18', 'M', 183.00, 84.00, '2003-09-09', 'SS', 'Derecho', 'Culp', NULL, 1);
+(833853, 'Aaron Judge', 32, 99, 147, 1, '2016-08-13', 'M', 201.00, 128.00, '1992-04-26', 'OF', 'Derecho', 'The Judge', '2013', 'Estados Unidos'),
+(833854, 'Shohei Ohtani', 30, 17, 119, 1, '2018-03-29', 'M', 193.00, 95.00, '1994-07-05', 'P/DH', 'Izquierdo', 'Showtime', '2018', 'Japon'),
+(833855, 'Juan Soto', 26, 22, 120, 1, '2018-05-20', 'M', 188.00, 102.00, '1998-10-25', 'OF', 'Izquierdo', 'Childish Bambino', '2015', 'Republica Dominicana'),
+(833856, 'Fernando Tatís Jr.', 25, 23, 135, 1, '2019-03-28', 'M', 191.00, 95.00, '1999-01-02', 'SS/OF', 'Derecho', 'El Niño', '2016', 'Republica Dominicana'),
+(833857, 'Mookie Betts', 32, 50, 119, 1, '2014-06-29', 'M', 175.00, 82.00, '1992-10-07', 'OF/2B', 'Derecho', 'Cookie', '2011', 'Estados Unidos'),
+(833858, 'Vladimir Guerrero Jr.', 26, 27, 141, 1, '2019-04-26', 'M', 188.00, 111.00, '1999-03-16', '1B', 'Derecho', 'Vladito', '2015', 'Republica Dominicana'),
+(833859, 'Ronald Acuña Jr.', 26, 13, 144, 1, '2018-04-25', 'M', 183.00, 93.00, '1997-12-18', 'OF', 'Derecho', 'El Abusador', '2015', 'Venezuela'),
+(833860, 'Mike Trout', 33, 27, 108, 1, '2011-07-08', 'M', 188.00, 106.00, '1991-08-07', 'OF', 'Derecho', 'The Millville Meteor', '2009', 'Estados Unidos'),
+(833861, 'Freddie Freeman', 34, 5, 119, 1, '2010-09-01', 'M', 196.00, 102.00, '1989-09-12', '1B', 'Izquierdo', 'Free', '2007', 'Estados Unidos'),
+(833862, 'José Ramírez', 31, 11, 114, 1, '2013-09-01', 'M', 175.00, 86.00, '1992-09-17', '3B', 'Ambidiestro', 'Enriquito', '2009', 'Republica Dominicana'),
+(833863, 'Bobby Witt Jr.', 24, 7, 118, 1, '2022-04-07', 'M', 183.00, 90.00, '2000-06-14', 'SS', 'Derecho', 'B-Dub', '2019', 'Estados Unidos'),
+(833864, 'Julio Rodríguez', 23, 44, 136, 1, '2022-04-08', 'M', 191.00, 97.00, '2000-12-29', 'OF', 'Derecho', 'J-Rod', '2017', 'Republica Dominicana'),
+(833865, 'Bryce Harper', 31, 3, 143, 1, '2012-04-28', 'M', 191.00, 98.00, '1992-10-16', '1B/OF', 'Izquierdo', 'Bam Bam', '2010', 'Estados Unidos'),
+(833866, 'Francisco Lindor', 30, 12, 121, 1, '2015-06-14', 'M', 178.00, 86.00, '1993-11-14', 'SS', 'Ambidiestro', 'Mr. Smile', '2011', 'Puerto Rico'),
+(833867, 'Luis Robert Jr.', 26, 88, 145, 1, '2020-07-24', 'M', 190.00, 98.00, '1997-08-03', 'OF', 'Derecho', 'La Pantera', '2017', 'Cuba'),
+(833868, 'Yordan Álvarez', 27, 44, 117, 1, '2019-06-09', 'M', 196.00, 102.00, '1997-06-27', 'OF/DH', 'Izquierdo', 'Air Yordan', '2016', 'Cuba'),
+(833869, 'Gerrit Cole', 33, 45, 147, 1, '2013-06-11', 'M', 193.00, 99.00, '1990-09-08', 'P', 'Derecho', 'Cole Train', '2011', 'Estados Unidos'),
+(833870, 'Corbin Burnes', 29, 39, 110, 1, '2018-07-10', 'M', 191.00, 93.00, '1994-10-22', 'P', 'Derecho', 'Burnesy', '2016', 'Estados Unidos'),
+(833871, 'Zack Wheeler', 34, 45, 143, 1, '2013-06-18', 'M', 193.00, 97.00, '1990-05-30', 'P', 'Derecho', 'Wheels', '2009', 'Estados Unidos'),
+(833872, 'Kyle Tucker', 27, 30, 117, 1, '2018-07-07', 'M', 193.00, 88.00, '1997-01-17', 'OF', 'Izquierdo', 'King Tuck', '2015', 'Estados Unidos'),
+(833873, 'Adley Rutschman', 26, 35, 110, 1, '2022-05-21', 'M', 188.00, 100.00, '1998-02-06', 'C', 'Ambidiestro', 'Clutchman', '2019', 'Estados Unidos'),
+(833874, 'Gunnar Henderson', 22, 2, 110, 1, '2022-08-31', 'M', 191.00, 96.00, '2001-06-29', 'SS/3B', 'Izquierdo', 'G-Money', '2019', 'Estados Unidos'),
+(833875, 'Zac Gallen', 28, 23, 109, 1, '2019-06-20', 'M', 188.00, 86.00, '1995-08-03', 'P', 'Derecho', 'Milk Man', '2016', 'Estados Unidos'),
+(833876, 'Marcus Semien', 34, 2, 140, 1, '2013-09-04', 'M', 183.00, 88.00, '1990-09-17', '2B', 'Derecho', 'Semi', '2011', 'Estados Unidos'),
+(833877, 'Corey Seager', 30, 5, 140, 1, '2015-09-03', 'M', 193.00, 97.00, '1994-04-27', 'SS', 'Izquierdo', 'Seags', '2012', 'Estados Unidos'),
+(833878, 'Pete Alonso', 29, 20, 121, 1, '2019-03-28', 'M', 191.00, 111.00, '1994-12-07', '1B', 'Derecho', 'Polar Bear', '2016', '1'),
+(833879, 'Ozzie Albies', 27, 1, 144, 1, '2017-08-01', 'M', 173.00, 75.00, '1997-01-07', '2B', 'Ambidiestro', 'Wizard of Oz', '2013', '5'),
+(833880, 'José Altuve', 34, 27, 117, 1, '2011-07-20', 'M', 168.00, 73.00, '1990-05-06', '2B', 'Derecho', 'Little Giant', '2006', '4'),
+(833881, 'Matt Olson', 30, 28, 144, 1, '2016-09-12', 'M', 196.00, 102.00, '1994-03-29', '1B', 'Izquierdo', 'Oly', '2012', '1'),
+(833882, 'Austin Riley', 27, 27, 144, 1, '2019-05-15', 'M', 191.00, 108.00, '1997-04-02', '3B', 'Derecho', 'Young Thicc', '2015', '1'),
+(833883, 'Spencer Strider', 25, 99, 144, 1, '2021-10-01', 'M', 188.00, 88.00, '1998-10-28', 'P', 'Derecho', 'Strider Man', '2020', '1'),
+(833884, 'Elly De La Cruz', 22, 44, 113, 1, '2023-06-06', 'M', 196.00, 91.00, '2002-01-11', 'SS/3B', 'Ambidiestro', 'La Tsunami', '2018', '3'),
+(833885, 'Oneil Cruz', 25, 15, 134, 1, '2021-10-02', 'M', 201.00, 99.00, '1998-10-04', 'SS', 'Izquierdo', 'El Jefe', '2017', '3'),
+(833886, 'Bryan Reynolds', 29, 10, 134, 1, '2019-04-20', 'M', 191.00, 93.00, '1995-01-27', 'OF', 'Ambidiestro', 'Bry', '2016', '1'),
+(833887, 'Dylan Cease', 28, 84, 145, 1, '2019-07-03', 'M', 188.00, 97.00, '1995-12-28', 'P', 'Derecho', 'Cease and Desist', '2014', '1'),
+(833888, 'Jazz Chisholm Jr.', 26, 2, 146, 1, '2020-09-01', 'M', 183.00, 84.00, '1998-02-01', 'OF', 'Izquierdo', 'Jazz', '2015', '5'),
+(833889, 'CJ Abrams', 23, 5, 120, 1, '2022-04-08', 'M', 188.00, 86.00, '2000-10-03', 'SS', 'Izquierdo', 'CJ', '2019', '1'),
+(833890, 'Trea Turner', 30, 7, 143, 1, '2015-08-21', 'M', 185.00, 84.00, '1993-06-30', 'SS', 'Derecho', 'Trea Bae', '2014', '1'),
+(833891, 'Justin Verlander', 41, 35, 117, 1, '2005-07-04', 'M', 196.00, 102.00, '1983-02-20', 'P', 'Derecho', 'JV', '2004', '1'),
+(833892, 'Xander Bogaerts', 31, 2, 135, 1, '2013-08-20', 'M', 185.00, 95.00, '1992-10-01', 'SS', 'Derecho', 'X-Man', '2009', '5'),
+(833893, 'Ketel Marte', 30, 4, 109, 1, '2015-07-31', 'M', 188.00, 95.00, '1993-10-12', '2B', 'Ambidiestro', 'El Nino', '2010', '3'),
+(833894, 'Bo Bichette', 26, 11, 141, 1, '2019-07-29', 'M', 183.00, 86.00, '1998-03-05', 'SS', 'Derecho', 'Bo Flow', '2016', '1'),
+(833895, 'Wander Franco', 23, 5, 139, 1, '2021-06-22', 'M', 178.00, 86.00, '2001-03-01', 'SS', 'Ambidiestro', 'El Patron', '2017', '3'),
+(833896, 'Randy Arozarena', 29, 56, 139, 1, '2019-08-14', 'M', 180.00, 84.00, '1995-02-28', 'OF', 'Derecho', 'The Cuban Missile', '2016', '3'),
+(833897, 'Steven Kwan', 26, 38, 114, 1, '2022-04-08', 'M', 175.00, 77.00, '1997-09-05', 'OF', 'Izquierdo', 'Special K', '2018', '1'),
+(833898, 'Emmanuel Clase', 26, 48, 114, 1, '2019-08-04', 'M', 188.00, 97.00, '1998-03-18', 'P', 'Derecho', 'Hot Cheese', '2015', '3'),
+(833899, 'Hunter Greene', 24, 21, 113, 1, '2022-04-10', 'M', 198.00, 97.00, '1999-08-06', 'P', 'Derecho', 'The Real HG', '2017', '1'),
+(833900, 'Alejandro Kirk', 25, 30, 141, 1, '2020-09-01', 'M', 173.00, 111.00, '1998-11-06', 'C', 'Derecho', 'Captain Kirk', '2016', '2'),
+(833901, 'Paul Goldschmidt', 36, 46, 138, 1, '2011-08-01', 'M', 191.00, 100.00, '1987-09-10', '1B', 'Derecho', 'Goldy', '2009', '1'),
+(833902, 'Nolan Arenado', 33, 28, 138, 1, '2013-04-28', 'M', 188.00, 97.00, '1991-04-16', '3B', 'Derecho', 'Nado', '2009', '1'),
+(833903, 'Roki Sasaki', 22, 17, 108, 2, '2020-10-31', 'M', 190.00, 88.00, '2001-11-03', 'P', 'Derecho', 'The Monster', '2019', '2'),
+(833904, 'Munetaka Murakami', 24, 55, 109, 2, '2018-09-05', 'M', 188.00, 100.00, '2000-02-02', '3B', 'Derecho', 'Muna', '2017', '2'),
+(833905, 'Yoshinobu Yamamoto', 25, 18, 119, 1, '2017-10-02', 'M', 178.00, 79.00, '1998-08-17', 'P', 'Derecho', 'Yoshi', '2016', '2'),
+(833906, 'Freddy Asiel Álvarez', 34, 51, 110, 2, '2011-12-08', 'M', 185.00, 88.00, '1990-04-25', 'P', 'Derecho', 'El Gigante', '2008', '3'),
+(833907, 'Alfredo Despaigne', 38, 54, 111, 2, '2009-02-20', 'M', 175.00, 93.00, '1986-06-17', 'OF/DH', 'Derecho', 'El Caballo', '2003', '3'),
+(833908, 'Yulieski Gurriel', 39, 10, 110, 2, '2005-03-15', 'M', 183.00, 86.00, '1984-06-09', '1B', 'Derecho', 'La Piña', '2001', '3'),
+(833909, 'Seiya Suzuki', 29, 27, 112, 1, '2013-09-30', 'M', 182.00, 95.00, '1994-08-18', 'OF', 'Derecho', 'The Phenom', '2012', '2'),
+(833910, 'Jung-hoo Lee', 25, 51, 113, 1, '2017-03-31', 'M', 183.00, 88.00, '1998-08-29', 'OF', 'Izquierdo', 'Grandson of Wind', '2016', '6'),
+(833911, 'Hyun-jin Ryu', 37, 99, 141, 1, '2013-04-02', 'M', 190.00, 115.00, '1987-03-25', 'P', 'Izquierdo', 'Korean Monster', '2006', '6'),
+(833912, 'Ha-seong Kim', 28, 7, 135, 1, '2021-04-01', 'M', 178.00, 82.00, '1995-10-17', 'IF', 'Derecho', 'The Fielding Wizard', '2014', '6'),
+(833913, 'Masataka Yoshida', 30, 7, 111, 1, '2023-04-01', 'M', 175.00, 86.00, '1993-07-15', 'OF', 'Izquierdo', 'Big Boss', '2016', '2'),
+(833914, 'Kodai Senga', 31, 34, 121, 1, '2023-04-02', 'M', 183.00, 86.00, '1993-01-30', 'P', 'Derecho', 'Ghost Fork', '2010', '2'),
+(833915, 'José Adolis García', 31, 53, 140, 1, '2018-08-06', 'M', 188.00, 93.00, '1993-03-02', 'OF', 'Derecho', 'El Bombi', '2016', '3'),
+(833916, 'Miguel Cabrera (Retirado)', 41, 24, 116, 2, '2003-06-20', 'M', 193.00, 113.00, '1983-04-18', '1B/DH', 'Derecho', 'Miggy', '1999', '4'),
+(833917, 'Julio Teherán', 33, 27, 144, 2, '2011-05-07', 'M', 188.00, 88.00, '1991-01-27', 'P', 'Derecho', 'JT', '2007', '7'),
+(833918, 'Joey Meneses', 32, 45, 120, 1, '2022-08-02', 'M', 190.00, 97.00, '1992-05-07', '1B/OF', 'Derecho', 'El Joey', '2011', '2'),
+(833919, 'Jackson Holliday', 20, 1, 110, 3, '2023-09-10', 'M', 183.00, 84.00, '2003-12-04', 'SS', 'Izquierdo', 'J-Ho', '2022', '1'),
+(833920, 'Paul Skenes', 22, 32, 134, 3, '2023-08-08', 'M', 198.00, 107.00, '2002-05-29', 'P', 'Derecho', 'Big Game', '2023', '1'),
+(833921, 'Jasson Domínguez', 21, 98, 147, 3, '2023-09-01', 'M', 178.00, 88.00, '2003-02-07', 'OF', 'Ambidiestro', 'The Martian', '2019', '3'),
+(833922, 'Wyatt Langford', 22, 24, 140, 3, '2023-09-12', 'M', 183.00, 93.00, '2001-10-27', 'OF', 'Derecho', 'Lang', '2023', '1'),
+(833923, 'James Wood', 21, 15, 120, 3, '2024-05-02', 'M', 201.00, 107.00, '2002-09-17', 'OF', 'Izquierdo', 'Woody', '2021', '1'),
+(833924, 'Junior Caminero', 20, 1, 139, 3, '2023-09-22', 'M', 183.00, 93.00, '2003-07-13', '3B', 'Derecho', 'El Junior', '2019', '3'),
+(833925, 'Brooks Lee', 23, 11, 142, 3, '2023-09-01', 'M', 183.00, 91.00, '2001-02-14', 'SS', 'Ambidiestro', 'Brooksie', '2022', '1'),
+(833926, 'Dylan Crews', 22, 15, 120, 3, '2024-04-01', 'M', 188.00, 93.00, '2002-02-01', 'OF', 'Derecho', 'Crewser', '2023', '1'),
+(833927, 'Jackson Chourio', 20, 11, 158, 3, '2023-08-28', 'M', 183.00, 84.00, '2004-03-11', 'OF', 'Derecho', 'Chou', '2021', '4'),
+(833928, 'Marcelo Mayer', 21, 10, 111, 3, '2023-08-01', 'M', 191.00, 86.00, '2002-12-12', 'SS', 'Izquierdo', 'Mayo', '2021', '1'),
+(833929, 'Alexia Lacatena', 22, 11, 108, 4, '2022-06-15', 'F', 175.00, 70.00, '2002-08-31', 'P', 'Derecho', 'Lex', '2020', '8'),
+(833930, 'Kelsie Whitmore', 25, 3, 109, 4, '2016-07-01', 'F', 170.00, 66.00, '1998-07-04', 'P/OF', 'Derecho', 'Kels', '2016', '1'),
+(833931, 'Tamara Holmes', 34, 24, 108, 4, '2010-05-12', 'F', 168.00, 63.00, '1990-11-09', 'OF', 'Derecho', 'T-Bone', '2008', '1'),
+(833932, 'Jade Gortarez', 26, 7, 109, 4, '2018-06-01', 'F', 165.00, 61.00, '1997-11-02', 'SS', 'Derecho', 'J.G.', '2016', '1'),
+(833933, 'Ashton Lansdell', 23, 5, 108, 4, '2020-05-25', 'F', 172.00, 68.00, '2001-03-17', '2B/P', 'Derecho', 'Ash', '2019', '1'),
+(833934, 'Luisa Gauci', 24, 14, 109, 4, '2019-04-10', 'F', 167.00, 64.00, '2000-09-10', 'C', 'Derecho', 'Lou', '2018', '9'),
+(833935, 'Amanda Asay', 32, 19, 110, 4, '2012-06-08', 'F', 173.00, 72.00, '1992-09-28', '1B/P', 'Derecho', 'Double A', '2010', '10'),
+(833936, 'Marika Lyszczyk', 23, 8, 110, 4, '2020-03-01', 'F', 168.00, 62.00, '2001-04-17', 'C', 'Derecho', 'Mari', '2019', '10'),
+(833937, 'Kylee Lahners', 30, 17, 108, 4, '2015-06-10', 'F', 170.00, 67.00, '1994-07-22', '3B', 'Derecho', 'Ky', '2014', '1'),
+(833938, 'Stacy Piagno', 33, 43, 109, 4, '2013-04-27', 'F', 175.00, 71.00, '1991-01-15', 'P', 'Derecho', 'Stace', '2012', '1'),
+(833939, 'Chase Burns', 21, 33, 111, 5, '2023-02-17', 'M', 193.00, 95.00, '2003-07-04', 'P', 'Derecho', 'Burner', NULL, '1'),
+(833940, 'Travis Bazzana', 21, 8, 112, 5, '2022-02-18', 'M', 183.00, 86.00, '2002-12-31', '2B', 'Izquierdo', 'Bazz', NULL, '9'),
+(833941, 'Jac Caglianone', 21, 14, 113, 5, '2022-02-18', 'M', 196.00, 102.00, '2003-03-01', '1B/P', 'Izquierdo', 'Cags', NULL, '1'),
+(833942, 'Charlie Condon', 21, 40, 114, 5, '2022-02-18', 'M', 196.00, 100.00, '2003-05-15', '1B/OF', 'Derecho', 'Chuck', NULL, '1'),
+(833943, 'Carson Benge', 20, 15, 115, 5, '2022-02-18', 'M', 188.00, 91.00, '2003-05-02', 'OF/P', 'Izquierdo', 'C.B.', NULL, '1'),
+(833944, 'Braden Montgomery', 21, 5, 116, 5, '2022-02-18', 'M', 188.00, 93.00, '2003-01-10', 'OF', 'Ambidiestro', 'Monty', NULL, '1'),
+(833945, 'Vance Honeycutt', 21, 5, 117, 5, '2022-02-18', 'M', 191.00, 88.00, '2003-04-20', 'OF', 'Derecho', 'Honey', NULL, '1'),
+(833946, 'Seaver King', 21, 7, 118, 5, '2023-02-17', 'M', 183.00, 84.00, '2003-07-10', '3B', 'Derecho', 'King S', NULL, '1'),
+(833947, 'Nick Kurtz', 21, 12, 119, 5, '2022-02-18', 'M', 193.00, 100.00, '2003-10-17', '1B', 'Izquierdo', 'Kurtzy', NULL, '1'),
+(833948, 'Kaelen Culpepper', 21, 6, 120, 5, '2022-02-18', 'M', 183.00, 84.00, '2003-09-09', 'SS', 'Derecho', 'Culp', NULL, '1');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ligas`
+-- Table structure for table `ligas`
 --
 
 CREATE TABLE `ligas` (
@@ -434,7 +434,7 @@ CREATE TABLE `ligas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `ligas`
+-- Dumping data for table `ligas`
 --
 
 INSERT INTO `ligas` (`id_de_la_liga`, `nombre_de_la_liga`, `id_equipo`, `id_jugador`) VALUES
@@ -444,45 +444,71 @@ INSERT INTO `ligas` (`id_de_la_liga`, `nombre_de_la_liga`, `id_equipo`, `id_juga
 (4, 'Liga Femenina', NULL, NULL),
 (5, 'Liga Universitaria', NULL, NULL);
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `sp_fixed`
+--
+
+CREATE TABLE `sp_fixed` (
+  `sp_id` int(11) NOT NULL,
+  `sp_name` varchar(255) NOT NULL,
+  `sp_lastname` varchar(255) NOT NULL,
+  `sp_avg` varchar(255) NOT NULL,
+  `sp_hr` varchar(255) NOT NULL,
+  `sp_rbi` varchar(255) NOT NULL,
+  `sp_obp` varchar(255) NOT NULL,
+  `sp_slg` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sp_fixed`
+--
+
+INSERT INTO `sp_fixed` (`sp_id`, `sp_name`, `sp_lastname`, `sp_avg`, `sp_hr`, `sp_rbi`, `sp_obp`, `sp_slg`) VALUES
+(1, 'Fernando', 'Tatis Jr.', '.320', '10', '24', '.387', '.567'),
+(2, 'Shohei', 'Ohtani', '.308', '12', '21', '.410', '.641'),
+(3, 'Juan', 'Soto', '.308', '12', '21', '.410', '.641');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `equipos`
+-- Indexes for table `equipos`
 --
 ALTER TABLE `equipos`
   ADD PRIMARY KEY (`id_del_equipo`),
   ADD KEY `id_de_la_liga` (`id_de_la_liga`);
 
 --
--- Indices de la tabla `estadisticas_equipos`
+-- Indexes for table `estadisticas_equipos`
 --
 ALTER TABLE `estadisticas_equipos`
   ADD PRIMARY KEY (`id_del_equipo`);
 
 --
--- Indices de la tabla `estadisticas_jugadores`
+-- Indexes for table `estadisticas_jugadores`
 --
 ALTER TABLE `estadisticas_jugadores`
   ADD PRIMARY KEY (`id_estadistica`),
   ADD KEY `id_del_jugador` (`id_del_jugador`);
 
 --
--- Indices de la tabla `historial_juegos`
+-- Indexes for table `historial_juegos`
 --
 ALTER TABLE `historial_juegos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `juegos`
+-- Indexes for table `juegos`
 --
 ALTER TABLE `juegos`
   ADD PRIMARY KEY (`id_del_juego`),
   ADD KEY `id_del_equipo` (`id_del_equipo`);
 
 --
--- Indices de la tabla `jugadores`
+-- Indexes for table `jugadores`
 --
 ALTER TABLE `jugadores`
   ADD PRIMARY KEY (`id_del_jugador`),
@@ -490,7 +516,7 @@ ALTER TABLE `jugadores`
   ADD KEY `id_de_la_liga` (`id_de_la_liga`);
 
 --
--- Indices de la tabla `ligas`
+-- Indexes for table `ligas`
 --
 ALTER TABLE `ligas`
   ADD PRIMARY KEY (`id_de_la_liga`),
@@ -498,82 +524,94 @@ ALTER TABLE `ligas`
   ADD KEY `fk_ligas_jugadores` (`id_jugador`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indexes for table `sp_fixed`
+--
+ALTER TABLE `sp_fixed`
+  ADD PRIMARY KEY (`sp_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `equipos`
+-- AUTO_INCREMENT for table `equipos`
 --
 ALTER TABLE `equipos`
   MODIFY `id_del_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
--- AUTO_INCREMENT de la tabla `estadisticas_jugadores`
+-- AUTO_INCREMENT for table `estadisticas_jugadores`
 --
 ALTER TABLE `estadisticas_jugadores`
   MODIFY `id_estadistica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=315;
 
 --
--- AUTO_INCREMENT de la tabla `historial_juegos`
+-- AUTO_INCREMENT for table `historial_juegos`
 --
 ALTER TABLE `historial_juegos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `juegos`
+-- AUTO_INCREMENT for table `juegos`
 --
 ALTER TABLE `juegos`
   MODIFY `id_del_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=720031;
 
 --
--- AUTO_INCREMENT de la tabla `jugadores`
+-- AUTO_INCREMENT for table `jugadores`
 --
 ALTER TABLE `jugadores`
   MODIFY `id_del_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=833949;
 
 --
--- AUTO_INCREMENT de la tabla `ligas`
+-- AUTO_INCREMENT for table `ligas`
 --
 ALTER TABLE `ligas`
   MODIFY `id_de_la_liga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT for table `sp_fixed`
+--
+ALTER TABLE `sp_fixed`
+  MODIFY `sp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `equipos`
+-- Constraints for table `equipos`
 --
 ALTER TABLE `equipos`
   ADD CONSTRAINT `equipos_ibfk_1` FOREIGN KEY (`id_de_la_liga`) REFERENCES `ligas` (`id_de_la_liga`);
 
 --
--- Filtros para la tabla `estadisticas_equipos`
+-- Constraints for table `estadisticas_equipos`
 --
 ALTER TABLE `estadisticas_equipos`
   ADD CONSTRAINT `estadisticas_equipos_ibfk_1` FOREIGN KEY (`id_del_equipo`) REFERENCES `equipos` (`id_del_equipo`);
 
 --
--- Filtros para la tabla `estadisticas_jugadores`
+-- Constraints for table `estadisticas_jugadores`
 --
 ALTER TABLE `estadisticas_jugadores`
   ADD CONSTRAINT `estadisticas_jugadores_ibfk_1` FOREIGN KEY (`id_del_jugador`) REFERENCES `jugadores` (`id_del_jugador`);
 
 --
--- Filtros para la tabla `juegos`
+-- Constraints for table `juegos`
 --
 ALTER TABLE `juegos`
   ADD CONSTRAINT `juegos_ibfk_1` FOREIGN KEY (`id_del_equipo`) REFERENCES `equipos` (`id_del_equipo`);
 
 --
--- Filtros para la tabla `jugadores`
+-- Constraints for table `jugadores`
 --
 ALTER TABLE `jugadores`
   ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`id_del_equipo`) REFERENCES `equipos` (`id_del_equipo`),
   ADD CONSTRAINT `jugadores_ibfk_2` FOREIGN KEY (`id_de_la_liga`) REFERENCES `ligas` (`id_de_la_liga`);
 
 --
--- Filtros para la tabla `ligas`
+-- Constraints for table `ligas`
 --
 ALTER TABLE `ligas`
   ADD CONSTRAINT `fk_ligas_equipos` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_del_equipo`),
