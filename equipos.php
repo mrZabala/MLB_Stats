@@ -8,8 +8,8 @@
     <script src="assets/tailwind.js"></script>
     <link rel="stylesheet" href="assets/fontawesome.css">
     <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/jqueryTable.css">
+    <link rel="stylesheet" href="assets/themejq.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
