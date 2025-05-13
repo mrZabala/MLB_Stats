@@ -149,7 +149,7 @@
     </style>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col">
     <!-- Navegación -->
     <nav id="top" class="flex justify-between bg-gray-800 text-white p-4 items-center lg:p-8">
         <!-- LEFT Hand Side -->
@@ -172,7 +172,7 @@
                     <li><a href="index.php" class="boton">Inicio</a></li>
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
-                    <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
+                    <li><a href="partidos.php" class="boion">Partidos</a></li>
                     <li><a href="trivia.php" class="boton">Trivia</a></li>
                 </ul>
             </div>
@@ -180,7 +180,7 @@
         <!-- END RIGHT Hand Side -->
     </nav>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-grow">
         <h2 class="text-3xl font-bold mb-6 text-center text-gray-800 section-title">Trivia de Béisbol MLB</h2>
 
         <div class="max-w-3xl mx-auto">
@@ -267,23 +267,26 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-6 mt-12 px-4 text-lg">
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 px-4 text-lg">
         <div class="px-4 flex flex-col items-center gap-4">
+
             <!-- Enlaces -->
             <div class="w-full flex justify-between px-4 lg:justify-evenly">
-                <a href="index.php" class="hover:text-gray-400 transition">Inicio</a>
-                <a href="jugadores.php" class="hover:text-gray-400 transition">Jugadores</a>
-                <a href="equipos.php" class="hover:text-gray-400 transition">Equipos</a>
-                <a href="trivia.php" class="hover:text-gray-400 transition">Trivia</a>
+                <a href="#top" class="hover:text-gray-400 transition text-xl">Inicio</a>
+                <a href="#info" class="hover:text-gray-400 transition text-xl">Info</a>
+                <a href="#players" class="hover:text-gray-400 transition text-xl">Jugadores</a>
             </div>
 
-           
-            <div class="flex items-center space-x-2">
+            <!-- Derechos -->
+            <div class="flex items-center space-x-2 text-xl">
                 <span>&copy;</span>
                 <span>2025 MLB STATS. Todos los derechos reservados.</span>
             </div>
+
         </div>
     </footer>
+    <!-- FOOTER End -->
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

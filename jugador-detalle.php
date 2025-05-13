@@ -86,26 +86,43 @@
     </style>
 </head>
 
-<body class="min-h-screen">
+<body class="flex flex-col bg-gray-100 min-h-screen">
     <!-- Navegación -->
-    <nav id="navShadow" class="flex justify-between bg-gray-800 text-white p-4">
+    <nav id="top" class="flex justify-between bg-gray-800 text-white p-4 items-center lg:p-8">
         <!-- LEFT Hand Side -->
         <div>
-            <h1>MLB STATS</h1>
+            <a href="index.php">
+                <h1 class="page-title">MLB STATS</h1>
+            </a>
         </div>
+        <!-- END LEFT Hand Side -->
+
         <!-- RIGHT Hand Side -->
         <div>
-            <ul class="flex gap-6">
-                <li><a href="index.php" class="boton">Inicio</a></li>
-                <li><a href="jugadores.php" class="boton">Jugadores</a></li>
-                <li><a href="equipos.php" class="boton">Equipos</a></li>
-                <li><a href="#" class="boton">Partidos</a></li>
-                <li><a href="trivia.php" class="boton">Trivia</a></li>
-            </ul>
+            <!-- Mobile Menu -->
+            <div>
+                <img src="assets/img/bars-solid.png" alt="" class="max-w-[50px] h-auto lg:hidden">
+            </div>
+            <!-- Desktop Menu -->
+            <div class="menu">
+                <ul class="flex gap-6 hidden lg:flex hero-paragraph">
+                    <li><a href="index.php" class="boton">Inicio</a></li>
+                    <li><a href="jugadores.php" class="boton">Jugadores</a></li>
+                    <li><a href="equipos.php" class="boton">Equipos</a></li>
+                    <li><a href="partidos.php" class="boton">Partidos</a></li>
+                    <li><a href="trivia.php" class="boton">Trivia</a></li>
+                </ul>
+            </div>
+
         </div>
+        <!-- END RIGHT Hand Side -->
     </nav>
 
     <?php
+        function clearN($clearable){
+            return substr($clearable, 1);
+        }
+
         // Conexión a la base de datos
         $servername = "localhost";
         $username = "root";
@@ -143,20 +160,33 @@
                 $result_historial = $conn->query($sql_historial);
                 ?>
 
-                <main class="container mx-auto px-4 py-8">
+                <main class="container mx-auto px-4 py-8 flex-grow">
                     <div class="mb-4">
                         <a href="jugadores.php" class="btn-back px-4 py-2 rounded-md inline-flex items-center">
                             <i class="fas fa-arrow-left mr-2"></i> Volver a la lista de jugadores
                         </a>
                     </div>
-
+                    <!-- assets/img/mlb_logo.webp -->
                     <!-- Información principal del jugador -->
                     <div class="player-card p-6 mb-6">
                         <div class="md:flex">
                             <div class="md:w-1/3 mb-4 md:mb-0">
                                 <!-- Imagen del jugador (placeholder) -->
                                 <div class="bg-gray-200 rounded-lg w-full aspect-square flex items-center justify-center">
-                                    <i class="fas fa-user-alt text-6xl text-gray-400"></i>
+                                    <!-- <i class="fas fa-user-alt text-6xl text-gray-400"></i> -->
+                                    <img src="<?php if($id_jugador = $conn->real_escape_string($_GET['id']) == 833856){
+                                        echo "assets/img/tatisjr.png";
+                                    }elseif($id_jugador = $conn->real_escape_string($_GET['id']) == 833854){
+                                        echo "assets/img/ohtani.png";
+                                    }elseif($id_jugador = $conn->real_escape_string($_GET['id']) == 833855){
+                                        echo "assets/img/juan-soto.png";
+                                    }else{
+                                        echo "assets/img/mlb_logo.webp";
+                                    };?>" alt="" class="<?php if($id_jugador = $conn->real_escape_string($_GET['id']) == 833856 || $id_jugador = $conn->real_escape_string($_GET['id']) == 833854 || $id_jugador = $conn->real_escape_string($_GET['id']) == 833855){
+                                        echo "w-full";
+                                    }else{
+                                        echo "max-w-[200px]";
+                                    };?> h-auto">
                                 </div>
                             </div>
                             <div class="md:w-2/3 md:pl-6">
@@ -211,7 +241,7 @@
                         <!-- AVG -->
                         <div class="stats-card p-4 text-center">
                             <div class="stat-label">Promedio de bateo</div>
-                            <div class="stat-value"><?php echo number_format($jugador['promedio_de_bateo'], 3); ?></div>
+                            <div class="stat-value"><?php echo clearN($jugador['promedio_de_bateo']); ?></div>
                             <?php
                             // Indicador de rendimiento para AVG
                             $avg_class = 'poor';
@@ -274,7 +304,7 @@
                         <!-- OBP -->
                         <div class="stats-card p-4 text-center">
                             <div class="stat-label">OBP</div>
-                            <div class="stat-value"><?php echo number_format($jugador['promedio_de_enbasase'], 3); ?></div>
+                            <div class="stat-value"><?php echo clearN($jugador['promedio_de_enbasase']); ?></div>
                             <?php
                             // Indicador de rendimiento para OBP
                             $obp_class = 'poor';
@@ -295,7 +325,7 @@
                         <!-- SLG -->
                         <div class="stats-card p-4 text-center">
                             <div class="stat-label">SLG</div>
-                            <div class="stat-value"><?php echo number_format($jugador['promedio_de_slugging'], 3); ?></div>
+                            <div class="stat-value"><?php echo clearN($jugador['promedio_de_slugging']); ?></div>
                             <?php
                             // Indicador de rendimiento para SLG
                             $slg_class = 'poor';
@@ -520,23 +550,26 @@
         $conn->close();
     ?>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-12 px-4">
-        <div class="container mx-auto flex flex-col items-center gap-4">
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 px-4  text-lg">
+        <div class="px-4 flex flex-col items-center gap-4">
+
             <!-- Enlaces -->
             <div class="w-full flex justify-between px-4 lg:justify-evenly">
-                <a href="index.php" class="hover:text-gray-400 transition">Inicio</a>
-                <a href="jugadores.php" class="hover:text-gray-400 transition">Jugadores</a>
-                <a href="#" class="hover:text-gray-400 transition">Equipos</a>
+                <a href="#top" class="hover:text-gray-400 transition text-xl">Inicio</a>
+                <a href="#info" class="hover:text-gray-400 transition text-xl">Info</a>
+                <a href="#players" class="hover:text-gray-400 transition text-xl">Jugadores</a>
             </div>
 
             <!-- Derechos -->
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 text-xl">
                 <span>&copy;</span>
                 <span>2025 MLB STATS. Todos los derechos reservados.</span>
             </div>
+
         </div>
     </footer>
+    <!-- FOOTER End -->
 </body>
 
 </html>

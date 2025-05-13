@@ -1,0 +1,159 @@
+[33mcommit a78f067cdc6abfea324c962e8c4b8ad12010a3d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Wander David <5713254@itfam.edu.do>
+Date:   Mon May 12 20:50:10 2025 -0600
+
+    Update README.md
+
+[33mcommit 8483e0617a05c22be86bcab59e24b0232f90a9b0[m
+Author: Wander David <5713254@itfam.edu.do>
+Date:   Mon May 12 20:48:04 2025 -0600
+
+    Update README.md
+
+[33mcommit a7df2ed390e4961ae4c471606628f32ed1dd6a3f[m
+Author: Wander David <5713254@itfam.edu.do>
+Date:   Mon May 12 20:47:00 2025 -0600
+
+    Update README.md
+
+[33mcommit 1c103bbe46549fa9a27adee760b00d76d71a6fb6[m
+Author: Wander David <5713254@itfam.edu.do>
+Date:   Mon May 12 20:43:32 2025 -0600
+
+    Create README.md
+
+[33mcommit b333baedaffba4846fa99621fa119c56185eb9a2[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Mon May 12 20:08:30 2025 -0600
+
+    se arreglo la seccion de jugadores se creo el apartado de ver de datalles de equipos se creo el apartado de ver detalles de juegos se arreglo la trvia y a se solucionaron pal de vaina falta ponerle la imagenes a los jugadores y equipos y arreglar la parte de abajo del inicio
+
+[33mcommit a13c67665e7078c360de8cdf30e8df0677a7a18f[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Mon May 12 15:10:20 2025 -0600
+
+    subiendo la db
+
+[33mcommit 5ef0c2524f0c86cdf4703769d09492996d74b925[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Mon May 12 13:41:36 2025 -0600
+
+    creando seccion de partidos faltan pal de vaina por hacer
+
+[33mcommit 8b944eef3af415e09a4800e0b9c24371a4af14a1[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Mon May 12 15:08:32 2025 -0400
+
+    Add files via upload
+
+[33mcommit 6a3d39443f94aa1c4f3b3e08bcda4d51df633662[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Mon May 12 14:53:26 2025 -0400
+
+    Add files via upload
+    
+    arreglando errores
+
+[33mcommit dd625a1c917f18351beb35a7740f9fc750e1b74c[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Mon May 12 13:46:31 2025 -0400
+
+    db
+
+[33mcommit 2d6c56fca7047a4cffbc7b19aff9b4c8b82e036e[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Mon May 12 13:40:40 2025 -0400
+
+    n
+
+[33mcommit 4a5d91f2782990ff3c7a4c9f1067daf7d2438f24[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Sun May 11 18:22:13 2025 -0600
+
+    arrglando pal de vaina y añadiendo la seccion de trivia falta la parte de detalles de equipos y los juegos proximos
+
+[33mcommit dd5e75388b3c5eff2a4ff81de20b08f2491156a4[m
+Merge: 84af1f1 d99c31c
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Sun May 11 18:20:02 2025 -0600
+
+    Merge branch 'master' of https://github.com/mrZabala/MLB_Stats
+
+[33mcommit 84af1f1e97804e24038915beb7232f036b67c8d1[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Sun May 11 18:18:54 2025 -0600
+
+    arrglando pal de vaina y añadiendo la seccion de trivia falta la parte de detalles de equipos y los juegos proximos
+
+[33mcommit d99c31c153075981e03ff4d558bf5f30a10ab278[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Sun May 11 01:05:10 2025 -0400
+
+    Carreras impulsadas, wander mmg
+
+[33mcommit d6b157b19bd417de60a33491dba07893a8ff2244[m
+Merge: 083aba3 2e7c4e1
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Sat May 10 22:57:23 2025 -0600
+
+    creando la pagina equipos y arreglando pal de errores que hizo elio tambien hice cambios en la base de datos buenas noches me quite
+
+[33mcommit 2e7c4e1152709d974e05c9e87f0452c13ad84f25[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Sat May 10 17:05:20 2025 -0400
+
+    Finish jugadores & Casi casi detalles de jugadores
+
+[33mcommit fbc16274f50ce494cc79addc76d176b0add290f2[m
+Author: not-ludwig <lokillo0012@gmail.com>
+Date:   Fri May 9 22:33:44 2025 -0400
+
+    finish index
+
+[33mcommit bdf21f8f26fc9945396cc705c0015a0103d9a4b3[m
+Author: not-ludwig <lokillo0012@gmail.com>
+Date:   Fri May 9 22:31:48 2025 -0400
+
+    rework
+
+[33mcommit 8bf7eb7602d0ed983ae482b012643586ee7eea47[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Fri May 9 22:26:05 2025 -0400
+
+    Luguin mmg
+
+[33mcommit 083aba3fb7e13a222f64281930ca0857176d5ce8[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Fri May 9 19:07:29 2025 -0600
+
+    hagan pull
+
+[33mcommit 31509daa7e8d0f00b7ee8e323a1e763d216107fa[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Fri May 9 18:59:19 2025 -0600
+
+    agregando boton ver mas a cada jugador
+
+[33mcommit 6619a6ceb67387f3e988f05243deed077ea63550[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Fri May 9 20:48:00 2025 -0400
+
+    nnn
+
+[33mcommit 1a0f6b86c2bee6c20534fdcea1a50b9ba677e67c[m
+Author: sombra9x19 <5713254@itfam.edu.do>
+Date:   Fri May 9 18:40:27 2025 -0600
+
+    creando la seccion de jugadores donde se muestra la estadistica de estos
+
+[33mcommit 0cdf66852063e332c38ed47363ef6323d7f6e88b[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Fri May 9 19:53:26 2025 -0400
+
+    Agregando nuevas funciones
+
+[33mcommit f61d8e8a82b4a035af568180649c90675213c30d[m
+Author: mrZabala <peliezer51@gmail.com>
+Date:   Fri May 9 19:02:49 2025 -0400
+
+    first commit

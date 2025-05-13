@@ -1,4 +1,8 @@
 <?php
+function clearN($clearable){
+            return substr($clearable, 1);
+        }
+
 // Configuración de la base de datos
 $servername = "127.0.0.1";
 $username = "root"; // Usuario por defecto de XAMPP
@@ -127,6 +131,8 @@ $conn->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f4f8;
@@ -186,9 +192,26 @@ $conn->close();
             font-size: 1.5rem;
             font-weight: bold;
         }
+         .page-title,
+    .hero-title,
+    .best-of-the-best {
+        font-family: "Cal Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .menu,
+    .hero-paragraph {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+    }
     </style>
 </head>
-<body>
+<body class="flex flex-col bg-gray-100 min-h-screen">
 
     <nav id="top" class="flex justify-between bg-gray-800 text-white p-4 items-center lg:p-8">
         <!-- LEFT Hand Side -->
@@ -211,7 +234,7 @@ $conn->close();
                     <li><a href="index.php" class="boton">Inicio</a></li>
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
-                    <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
+                    <li><a href="partidos.php" class="boton">Partidos</a></li>
                     <li><a href="trivia.php" class="boton">Trivia</a></li>
                 </ul>
             </div>
@@ -219,7 +242,7 @@ $conn->close();
         <!-- END RIGHT Hand Side -->
     </nav>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-grow">
         <div class="mb-4">
             <a href="partidos.php" class="btn-back px-4 py-2 rounded-md inline-flex items-center">
                 <i class="fas fa-arrow-left mr-2"></i> Volver a la lista de partidos
@@ -230,7 +253,8 @@ $conn->close();
             <div class="md:flex">
                 <div class="md:w-1/3 mb-4 md:mb-0">
                     <div class="bg-gray-200 rounded-lg w-full aspect-square flex items-center justify-center">
-                        <i class="fas fa-baseball-ball text-6xl text-gray-400"></i>
+                        <!-- <i class="fas fa-baseball-ball text-6xl text-gray-400"></i> -->
+                        <img src="assets/img/game_placeholder.jpg" alt="" class="rounded-lg w-[90%]">
                     </div>
                 </div>
                 <div class="md:w-2/3 md:pl-6">
@@ -280,7 +304,7 @@ $conn->close();
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div class="stat-card p-4">
                 <p class="stat-label">Promedio de Bateo</p>
-                <p class="stat-value"><?php echo number_format($estadisticas_equipo['promedios_al_bate'], 3); ?></p>
+                <p class="stat-value"><?php echo clearN($estadisticas_equipo['promedios_al_bate']); ?></p>
             </div>
             <div class="stat-card p-4">
                 <p class="stat-label">Home Runs</p>
@@ -316,7 +340,7 @@ $conn->close();
                             </a>
                         </td>
                         <td class="py-3 px-4"><?php echo htmlspecialchars($jugador['posicion_del_jugador'] ?? 'N/A'); ?></td>
-                        <td class="py-3 px-4"><?php echo isset($jugador['promedio_de_bateo']) ? number_format($jugador['promedio_de_bateo'], 3) : 'N/A'; ?></td>
+                        <td class="py-3 px-4"><?php echo isset($jugador['promedio_de_bateo']) ? clearN($jugador['promedio_de_bateo']) : 'N/A'; ?></td>
                         <td class="py-3 px-4"><?php echo $jugador['home_runs'] ?? 'N/A'; ?></td>
                         <td class="py-3 px-4"><?php echo $jugador['carreas_impulsadas'] ?? 'N/A'; ?></td>
                     </tr>
@@ -357,9 +381,26 @@ $conn->close();
     </main>
 
     <!-- Pie de Página -->
-    <footer class="footer-bg text-white text-center p-4 mt-8">
-        <p>&copy; <?php echo date("Y"); ?> MLB Stats. Todos los derechos reservados.</p>
+        <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 px-4  text-lg">
+        <div class="px-4 flex flex-col items-center gap-4">
+
+            <!-- Enlaces -->
+            <div class="w-full flex justify-between px-4 lg:justify-evenly">
+                <a href="#top" class="hover:text-gray-400 transition text-xl">Inicio</a>
+                <a href="#info" class="hover:text-gray-400 transition text-xl">Info</a>
+                <a href="#players" class="hover:text-gray-400 transition text-xl">Jugadores</a>
+            </div>
+
+            <!-- Derechos -->
+            <div class="flex items-center space-x-2 text-xl">
+                <span>&copy;</span>
+                <span>2025 MLB STATS. Todos los derechos reservados.</span>
+            </div>
+
+        </div>
     </footer>
+    <!-- FOOTER End -->
 
 </body>
 </html>

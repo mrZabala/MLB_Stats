@@ -63,6 +63,8 @@ $conn->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f4f8; /* Un gris más claro para el fondo */
@@ -105,6 +107,24 @@ padding: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
+
+           .page-title,
+    .hero-title,
+    .best-of-the-best {
+        font-family: "Cal Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .menu,
+    .hero-paragraph {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+    }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -131,7 +151,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
                     <li><a href="index.php" class="boton">Inicio</a></li>
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
-                    <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
+                    <li><a href="partidos.php" class="boton">Partidos</a></li>
                     <li><a href="trivia.php" class="boton">Trivia</a></li>
                 </ul>
             </div>
