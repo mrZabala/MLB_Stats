@@ -15,22 +15,8 @@ MLB Stats es una aplicación web completa diseñada para proporcionar estadísti
 
 ## Tecnologías Utilizadas
 
-### Frontend
-- **HTML5**: Estructura básica de las páginas web.
-- **CSS3**: Estilos personalizados para mejorar la apariencia visual.
-- **Tailwind CSS**: Framework de utilidades CSS para un diseño rápido y responsivo.
-- **JavaScript**: Interactividad del lado del cliente y manipulación del DOM.
-- **jQuery**: Biblioteca de JavaScript para simplificar la programación del lado del cliente.
-- **DataTables**: Plugin de jQuery para crear tablas interactivas con funcionalidades avanzadas.
-- **Font Awesome**: Biblioteca de iconos vectoriales para mejorar la interfaz de usuario.
+<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> </p>
 
-### Backend
-- **PHP**: Lenguaje de programación del lado del servidor para la lógica de negocio.
-- **MySQL**: Sistema de gestión de bases de datos relacional para almacenar toda la información.
-
-### Base de Datos
-- Esquema relacional con tablas para equipos, jugadores, estadísticas, partidos y más.
-- Consultas SQL optimizadas para recuperar datos eficientemente.
 
 ## Requisitos del Sistema
 
@@ -57,9 +43,7 @@ MLB Stats es una aplicación web completa diseñada para proporcionar estadísti
 - **assets/**: Directorio con recursos estáticos (imágenes, CSS, JavaScript)
 - **baseball_db.sql**: Archivo de base de datos con estructura y datos iniciales
 
-## Capturas de Pantalla
 
-*(Aquí se pueden incluir capturas de pantalla del proyecto)*
 
 ## Contribución
 
