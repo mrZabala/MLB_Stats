@@ -79,7 +79,7 @@
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
                     <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
-                    <li><a href="#" class="boton">Trivia</a></li>
+                    <li><a href="trivia.php" class="boton">Trivia</a></li>
                 </ul>
             </div>
 

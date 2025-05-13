@@ -188,7 +188,7 @@
                     <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                     <li><a href="equipos.php" class="boton">Equipos</a></li>
                     <li><a href="partidos.php" class="nav-link px-3 py-2 rounded hover:bg-gray-700">Partidos</a></li>
-                    <li><a href="#" class="boton">Trivia</a></li>
+                    <li><a href="trivia.php" class="boton">Trivia</a></li>
                 </ul>
             </div>
         </div>
@@ -249,7 +249,7 @@
         ?>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-            <!-- Static Team Card Example 1: New York Yankees -->
+            
             <div class="team-card overflow-hidden">
                 <div class="p-6 flex flex-col items-center">
                     <div class="bg-gray-100 rounded-full p-4 mb-4">
@@ -274,7 +274,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="equipo-detalle.php?id=1" 
+                    <a href="equipo-detalle.php?id=147" 
                        class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                         <i class="fas fa-eye mr-2"></i>Ver detalles
                     </a>
@@ -306,7 +306,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="equipo-detalle.php?id=2" 
+                    <a href="equipo-detalle.php?id=119" 
                        class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                         <i class="fas fa-eye mr-2"></i>Ver detalles
                     </a>
@@ -337,14 +337,14 @@
                             </div>
                         </div>
                     </div>
-                    <a href="equipo-detalle.php?id=2" 
+                    <a href="equipo-detalle.php?id=119" 
                        class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                         <i class="fas fa-eye mr-2"></i>Ver detalles
                     </a>
                 </div>
             </div>
 
-            <!-- Static Team Card Example 3: Boston Red Sox -->
+            
             <div class="team-card overflow-hidden">
                 <div class="p-6 flex flex-col items-center">
                     <div class="bg-gray-100 rounded-full p-4 mb-4">
@@ -369,7 +369,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="equipo-detalle.php?id=3" 
+                    <a href="equipo-detalle.php?id=111" 
                        class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                         <i class="fas fa-eye mr-2"></i>Ver detalles
                     </a>
@@ -435,7 +435,7 @@
                                     <?= $equipo['campeonato_ganados'] ?>
                                 </td>
                                 <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
-                                    <a href="equipo-detalles.php?id=<?= $equipo['id_del_equipo'] ?>" 
+                                    <a href="equipo-detalle.php?id=<?= $equipo['id_del_equipo'] ?>" 
                                        class="text-blue-600 hover:text-blue-900">
                                         <i class="fas fa-eye mr-1"></i> Ver detalles
                                     </a>

@@ -100,7 +100,7 @@
                 <li><a href="jugadores.php" class="boton">Jugadores</a></li>
                 <li><a href="equipos.php" class="boton">Equipos</a></li>
                 <li><a href="#" class="boton">Partidos</a></li>
-                <li><a href="#" class="boton">Trivia</a></li>
+                <li><a href="trivia.php" class="boton">Trivia</a></li>
             </ul>
         </div>
     </nav>
@@ -253,17 +253,17 @@
                         <!-- RBI -->
                         <div class="stats-card p-4 text-center">
                             <div class="stat-label">Carreras impulsadas</div>
-                            <div class="stat-value"><?php echo htmlspecialchars($jugador['carreras_impulsadas']); ?></div>
+                            <div class="stat-value"><?php echo htmlspecialchars($jugador['carreas_impulsadas']); ?></div>
                             <?php
                             // Indicador de rendimiento para RBI
                             $rbi_class = 'poor';
-                            if ($jugador['carreras_impulsadas'] >= 100)
+                            if ($jugador['carreas_impulsadas'] >= 100)
                                 $rbi_class = 'excellent';
-                            else if ($jugador['carreras_impulsadas'] >= 80)
+                            else if ($jugador['carreas_impulsadas'] >= 80)
                                 $rbi_class = 'good';
-                            else if ($jugador['carreras_impulsadas'] >= 60)
+                            else if ($jugador['carreas_impulsadas'] >= 60)
                                 $rbi_class = 'average';
-                            else if ($jugador['carreras_impulsadas'] >= 40)
+                            else if ($jugador['carreas_impulsadas'] >= 40)
                                 $rbi_class = 'below-average';
                             ?>
                             <div class="mt-2 w-full bg-gray-200 rounded">
@@ -325,8 +325,8 @@
                                     <div class="font-semibold"><?php echo htmlspecialchars($jugador['juegos_jugados']); ?></div>
                                 </div>
                                 <div>
-                                    <div class="text-sm text-gray-600">Veces al bate</div>
-                                    <div class="font-semibold"><?php echo htmlspecialchars($jugador['veces_al_bate']); ?></div>
+
+
                                 </div>
                                 <div>
                                     <div class="text-sm text-gray-600">Hits</div>
