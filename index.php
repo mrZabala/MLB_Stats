@@ -162,7 +162,7 @@
                                 <div class="p-4">
                                     <h3 class="text-xl font-semibold mb-1"><?= $jugador['nombre_del_jugador'] ?></h3>
                                     <p class="text-gray-600 mb-2">Posicion: <?= $jugador['posicion_del_jugador'] ?></p>
-                                    <p class="text-gray-500  mb-2">País de Origen: <?php if($jugador['lugar_de_nacimiento'] == 3){echo "Republica Dominicana";}?></p>
+                                    <p class="text-gray-500  mb-2">País de Origen: <?= $jugador['lugar_de_nacimiento'] ?></p>
                                     <a href="jugador-detalle.php?id=<?= $jugador['id_del_jugador'] ?>"
                                         class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                                         Ver más
@@ -200,7 +200,7 @@
                                 <div class="p-4">
                                     <h3 class="text-xl font-semibold mb-1"><?= $jugador['nombre_del_jugador'] ?></h3>
                                     <p class="text-gray-600 mb-2">Posicion: <?= $jugador['posicion_del_jugador'] ?></p>
-                                    <p class="text-gray-500  mb-2">País de Origen: <?php if($jugador['lugar_de_nacimiento'] == 2){echo "Japon";}?></p>
+                                    <p class="text-gray-500  mb-2">País de Origen: <?= $jugador['lugar_de_nacimiento'] ?></p>
                                     <a href="jugador-detalle.php?id=<?= $jugador['id_del_jugador'] ?>"
                                         class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                                         Ver más
@@ -238,7 +238,7 @@
                                 <div class="p-4">
                                     <h3 class="text-xl font-semibold mb-1"><?= $jugador['nombre_del_jugador'] ?></h3>
                                     <p class="text-gray-600 mb-2">Posicion: <?= $jugador['posicion_del_jugador'] ?></p>
-                                    <p class="text-gray-500  mb-2">País de Origen: <?php if($jugador['lugar_de_nacimiento'] == 3){echo "Republica Dominicana";}?></p>
+                                    <p class="text-gray-500  mb-2">País de Origen: <?= $jugador['lugar_de_nacimiento'] ?></p>
                                     <a href="jugador-detalle.php?id=<?= $jugador['id_del_jugador'] ?>"
                                         class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                                         Ver más
