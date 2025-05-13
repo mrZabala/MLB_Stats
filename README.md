@@ -54,10 +54,6 @@ Si desea contribuir a este proyecto, por favor:
 4. Envíe a la rama (`git push origin feature/nueva-funcion`)
 5. Abra un Pull Request
 
-## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT - vea el archivo LICENSE para más detalles.
 
-## Contacto
 
-*(Información de contacto del desarrollador)*
